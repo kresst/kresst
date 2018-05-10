@@ -1,26 +1,36 @@
 # kresst
 
+_Lightweight opinionated Node.js REST supercharge_ **@** [kresst.raphaelmarques.fr](https://kresst.raphaelmarques.fr)
+
 ## Installation
 
-Detailed installation instructions can be found on the [installation](./getting-started/installation.md) page.
+You can download the latest version of kresst from the [GitHub releases](https://github.com/kresst/kresst/releases/latest).
 
-## Using kresst
+To install via npm/yarn:
 
-TODO
-
-```typescript
-@GET(":id")
-public getCompanyById(id: string): Company {
-    // Fetch and return a company matching `id`
-}
+```bash
+npm install kresst --save
 ```
+
+or
+
+```bash
+yarn add kresst
+```
+
+## Documentation
+
+You can find documentation at [kresst.raphaelmarques.fr/docs](https://kresst.raphaelmarques.fr/docs). The markdown files that build the site are available under `/docs`. Previous version documentation is available at [kresst.raphaelmarques.fr/docs/latest/developers/\#previous-versions](https://kresst.raphaelmarques.fr/docs/latest/developers/#previous-versions).
 
 ## Contributing
 
-Before submitting an issue or a pull request to the project, please take a moment to look over the [contributing guidelines](./developers/contributing.md) first.
+Before submitting an issue or a pull request, please take a moment to look over the [contributing guidelines](https://github.com/kresst/kresst/blob/master/docs/developers/contributing.md) first. For support using kresst, please post questions with the [`kresst` tag on Stack Overflow](http://stackoverflow.com/questions/tagged/kresst).
 
-For support using kresst, please post questions with the [`kresst` tag on Stack Overflow](http://stackoverflow.com/questions/tagged/kresst).
+## Building
+
+Instructions on building and testing kresst can be found in [the documentation](https://github.com/kresst/kresst/blob/master/docs/developers/contributing.md#building-and-testing).
 
 ## License
 
 kresst is available under the [MIT license](http://opensource.org/licenses/MIT).
+

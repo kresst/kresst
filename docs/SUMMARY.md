@@ -1,13 +1,19 @@
-# Summary
+# Table of contents
 
 * [kresst](README.md)
-* [Getting Started](getting-started/README.md)
-  * [Installation](getting-started/installation.md)
-  * [Integration](getting-started/integration.md)
-  * [Usage](getting-started/usage.md)
-* [Developers](developers/README.md)
-  * [kresst API](developers/api/README.md)
-    * [@GET](developers/api/get.md)
-  * [Contributing](developers/contributing.md)
-* [Additional Notes](notes/README.md)
-  * [License](notes/license.md)
+* docs
+  * getting-started
+    * [Installation](docs/getting-started/installation.md)
+    * [Usage](docs/getting-started/usage.md)
+    * [Integration](docs/getting-started/integration.md)
+  * [README](docs/developers/README.md)
+    * [contributing](docs/developers/contributing.md)
+    * [kresst API](docs/developers/api/README.md)
+      * [@GET](docs/developers/api/get.md)
+  * notes
+    * [License](docs/notes/license.md)
+  * [Getting Started](docs/getting-started-1.md)
+  * [Summary](docs/summary.md)
+  * [Additional Notes](docs/notes-1.md)
+* [kresst](docs-1.md)
+
