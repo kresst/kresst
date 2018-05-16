@@ -1,6 +1,6 @@
 # Summary
 
-* [kresst](../docs-1.md)
+* [kresst](../README.md)
 * [Getting Started](getting-started-1.md)
   * [Installation](getting-started/installation.md)
   * [Integration](getting-started/integration.md)

@@ -15,5 +15,3 @@
   * [Getting Started](docs/getting-started-1.md)
   * [Summary](docs/summary.md)
   * [Additional Notes](docs/notes-1.md)
-* [kresst](docs-1.md)
-

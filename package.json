@@ -1,3 +1,78 @@
 {
-
+    "name": "kresst",
+    "description": "Lightweight opinionated Node.js REST supercharge",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "gulp build",
+        "build:prod": "gulp build --env=prod",
+        "lint": "gulp lint",
+        "test": "gulp test --env=test",
+        "precommit": "lint-staged && yarn lint && yarn test",
+        "postcommit": "git add ."
+    },
+    "lint-staged": {
+        "*.{js,json,css,md,ts,scss}": [
+            "prettier --write"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kresst/kresst"
+    },
+    "author": "Raphaël MARQUES <work.rmarques@gmail.com>",
+    "contributors": [],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kresst/kresst/issues"
+    },
+    "homepage": "https://kresst.raphaelmarques.fr/docs",
+    "dependencies": {
+        "lodash": "4.17.10",
+        "reflect-metadata": "0.1.12",
+        "rxjs": "5.5.7",
+        "verror": "1.10.0"
+    },
+    "devDependencies": {
+        "@types/chai": "4.1.3",
+        "@types/lodash": "4.14.108",
+        "@types/node": "9.4.0",
+        "@types/restify": "5.0.8",
+        "@types/restify-errors": "4.3.2",
+        "@types/sinon": "4.3.3",
+        "@types/supertest": "2.0.4",
+        "@types/verror": "1.10.3",
+        "babel-cli": "6.26.0",
+        "babel-core": "6.26.3",
+        "babel-preset-env": "1.7.0",
+        "chai": "4.1.2",
+        "del": "3.0.0",
+        "elegant-status": "1.1.0",
+        "gulp": "gulpjs/gulp#4.0",
+        "gulp-debug": "4.0.0",
+        "gulp-istanbul": "1.1.3",
+        "gulp-mocha": "5.0.0",
+        "gulp-rename": "1.2.3",
+        "gulp-sourcemaps": "2.6.4",
+        "gulp-tslint": "8.1.3",
+        "gulp-typescript": "4.0.2",
+        "husky": "0.14.3",
+        "lint-staged": "7.1.0",
+        "mkdirp": "0.5.1",
+        "mocha": "5.1.1",
+        "mocha-typescript": "1.1.12",
+        "prettier": "1.12.1",
+        "restify": "7.1.2",
+        "restify-errors": "6.0.0",
+        "rxjs-tslint": "0.1.4",
+        "sinon": "5.0.7",
+        "source-map-support": "0.5.6",
+        "supertest": "3.1.0",
+        "tslint": "5.10.0",
+        "tslint-clean-code": "0.2.7",
+        "tslint-consistent-codestyle": "1.13.0",
+        "tslint-eslint-rules": "5.3.1",
+        "tslint-sonarts": "1.6.0",
+        "typescript": "2.8.3",
+        "yargs": "11.0.0"
+    }
 }
