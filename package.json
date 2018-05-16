@@ -11,9 +11,7 @@
         "postcommit": "git add ."
     },
     "lint-staged": {
-        "*.{js,json,css,md,ts,scss}": [
-            "prettier --write"
-        ]
+        "*.{js,json,css,md,ts,scss}": ["prettier --write", "git add"]
     },
     "repository": {
         "type": "git",
