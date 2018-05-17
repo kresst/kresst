@@ -1,3 +1,3 @@
 # Additional Notes
 
-*   [License](notes/license.md)
+*   [License](license.md)

@@ -1,5 +1,5 @@
 # Getting Started
 
-*   [Installation](getting-started/installation.md)
-*   [Integration](getting-started/integration.md)
-*   [Usage](getting-started/usage.md)
+*   [Installation](installation.md)
+*   [Integration](integration.md)
+*   [Usage](usage.md)
