@@ -150,7 +150,8 @@ const istanbul = () => {
 const mocha = () => {
     return gulp
         .src(["node_modules/reflect-metadata/Reflect.js", "dist/**/*.spec.js"])
-        .pipe(gulpMocha({ ui: "bdd" }))
+        .pipe(gulpMocha({ ui: "bdd", checkLeaks: true }))
+        .on("error", () => {})
         .pipe(gulpIstanbul.writeReports());
 };
 
