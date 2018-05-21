@@ -151,7 +151,7 @@ const mocha = () => {
     return gulp
         .src(["node_modules/reflect-metadata/Reflect.js", "dist/**/*.spec.js"])
         .pipe(gulpMocha({ ui: "bdd", checkLeaks: true }))
-        .on("error", () => {})
+        .on("error", () => process.exit(1))
         .pipe(gulpIstanbul.writeReports());
 };
 
