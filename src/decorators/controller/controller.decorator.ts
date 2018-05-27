@@ -1,7 +1,7 @@
 import { camelCase, isString } from "lodash";
 import { RequestHandler } from "restify";
 import { METADATA_KEYS } from "../../domain/Constants";
-import { ControllerMetadata } from "../../domain/ControllerMetadata";
+import { ControllerMetadata } from "../../domain/decorators/ControllerMetadata";
 import { Newable } from "../../domain/Newable";
 import { makeInjectable } from "../injectable/injectable.decorator";
 

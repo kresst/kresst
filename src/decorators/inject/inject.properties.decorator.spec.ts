@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import { METADATA_KEYS } from "../../domain/Constants";
-import { IMetadata } from "../../domain/Metadata";
+import { IMetadata } from "../../domain/decorators/Metadata";
 import { Inject } from "./inject.decorator";
 
 interface Primary {}

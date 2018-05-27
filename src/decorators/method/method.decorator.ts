@@ -1,6 +1,6 @@
-import { HandlerDecorator } from "../../domain/HandlerDecorator";
+import { HandlerDecorator } from "../../domain/decorators/HandlerDecorator";
 import { RequestHandler } from "restify";
-import { ControllerMethodMetadata, ControllerMethodMetadataList, RouteOptions } from "../../domain/ControllerMethodMetadata";
+import { ControllerMethodMetadata, ControllerMethodMetadataList, RouteOptions } from "../../domain/decorators/ControllerMethodMetadata";
 import { METADATA_KEYS } from "../../domain/Constants";
 
 export const Method = (method: string, options: RouteOptions, ...middleware: Array<RequestHandler>): HandlerDecorator => {

@@ -1,7 +1,7 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "types": ["reflect-metadata"],
+        "types": ["reflect-metadata", "@types/mocha"],
         "typeRoots": ["node_modules/@types"],
         "lib": ["es6", "es2016.array.include", "es2017", "dom"],
         "target": "es5",

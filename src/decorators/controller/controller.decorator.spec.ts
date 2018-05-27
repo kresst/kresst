@@ -3,12 +3,12 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { Controller } from "../../";
 import { METADATA_KEYS } from "../../domain/Constants";
-import { ControllerMetadata } from "../../domain/ControllerMetadata";
+import { ControllerMetadata } from "../../domain/decorators/ControllerMetadata";
 
 @suite("Unit Test: @Controller")
 class ControllerDecoratorSpec {
-    @test("should add Controller metadata to a class when decorated with @Controller")
-    public addMetadata(): void {
+    @test
+    "should add Controller metadata to a class when decorated with @Controller"(): void {
         const path = "foo";
         const middleware = [(req: Request, res: Response, next: Next) => {}];
 

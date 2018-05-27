@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { Controller } from "../../";
 import { METADATA_KEYS } from "../../domain/Constants";
-import { ControllerMethodMetadata, ControllerMethodMetadataList } from "../../domain/ControllerMethodMetadata";
+import { ControllerMethodMetadata, ControllerMethodMetadataList } from "../../domain/decorators/ControllerMethodMetadata";
 import { PATCH } from "./patch.decorator";
 
 @suite("Unit Test: @PATCH")

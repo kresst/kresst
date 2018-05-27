@@ -1,6 +1,6 @@
 import { ERROR_MESSAGES, METADATA_KEYS } from "../../domain/Constants";
 import { Dictionary, isArray, isNumber, isUndefined } from "lodash";
-import { IMetadata, IMetadataList, Metadata, MetadataList } from "../../domain/Metadata";
+import { IMetadata, IMetadataList, Metadata, MetadataList } from "../../domain/decorators/Metadata";
 
 const _tagParameterOrProperty = (
     metadataKey: symbol,

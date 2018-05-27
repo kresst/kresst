@@ -1,10 +1,10 @@
 import { isArray, isBoolean, isNil, isRegExp, isString, padStart } from "lodash";
 import { RequestHandler, Server } from "restify";
 import { ERROR_MESSAGES, METADATA_KEYS } from "../../domain/Constants";
-import { Controller } from "../../domain/Controller";
-import { ControllerMetadata } from "../../domain/ControllerMetadata";
-import { ControllerMethodMetadata, ControllerMethodMetadataList } from "../../domain/ControllerMethodMetadata";
-import { ModuleConfig } from "../../domain/ModuleConfig";
+import { Controller } from "../../domain/decorators/Controller";
+import { ControllerMetadata } from "../../domain/decorators/ControllerMetadata";
+import { ControllerMethodMetadata, ControllerMethodMetadataList } from "../../domain/decorators/ControllerMethodMetadata";
+import { ModuleConfig } from "../../domain/decorators/ModuleConfig";
 import { Newable } from "../../domain/Newable";
 import { resolve } from "../resolver/resolver";
 

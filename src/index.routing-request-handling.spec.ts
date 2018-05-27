@@ -171,8 +171,8 @@ class IndexRoutingRequestHandlingSpec {
             .expect(200, JSON.stringify(result), done);
     }
 
-    @test.skip("should use returned values as response")
-    public returnedValueAsResponse(done: MochaDone): void {
+    @test.skip
+    "should use returned values as response"(done: MochaDone): void {
         const result = { hello: "world" };
 
         @Controller("/")
@@ -188,8 +188,8 @@ class IndexRoutingRequestHandlingSpec {
             .expect(200, JSON.stringify(result), done);
     }
 
-    @test("should allow server options")
-    public allowServerOptions(done: MochaDone): void {
+    @test
+    "should allow server options"(done: MochaDone): void {
         const result = { hello: "world" };
         const customHeaderName = "custom-header-name";
         const customHeaderValue = "custom-header-value";

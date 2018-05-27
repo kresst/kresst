@@ -1,6 +1,6 @@
 import { ControllerList } from "./Controller";
 import * as bunyan from "bunyan";
-import { NewableList } from "./Newable";
+import { NewableList } from "../Newable";
 
 export interface ModuleConfig {
     debug?: boolean;

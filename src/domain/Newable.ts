@@ -1,5 +1,5 @@
 export interface Newable {
-    new (...args: any[]): {};
+    new (...args: Array<any>): {};
 }
 
 export type NewableList = Array<Newable>;

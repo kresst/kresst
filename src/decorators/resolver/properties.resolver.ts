@@ -1,6 +1,6 @@
 import { Dictionary, isNil } from "lodash";
 import { ERROR_MESSAGES, METADATA_KEYS } from "../../domain/Constants";
-import { IMetadataList, Metadata, MetadataList } from "../../domain/Metadata";
+import { IMetadataList, Metadata, MetadataList } from "../../domain/decorators/Metadata";
 import { Newable } from "../../domain/Newable";
 import { VError } from "verror";
 
