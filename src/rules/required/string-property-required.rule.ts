@@ -14,8 +14,7 @@ export class StringPropertyRequiredRule<T> extends BusinessRule<T> {
         this.property = property;
     }
 
-    // tslint:disable-next-line:no-unused-variable
-    public isApplicable(object: T): boolean {
+    public isApplicable(_object: T): boolean {
         return true;
     }
 

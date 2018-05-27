@@ -20,13 +20,11 @@ export class BusinessRulesBagForItem<E, I> implements IBusinessRule<E> {
         this.businessRules = isArray(businessRules) ? businessRules : [];
     }
 
-    // tslint:disable-next-line:no-unused-variable
-    public isApplicable(object: E): boolean {
+    public isApplicable(__object: E): boolean {
         return true;
     }
 
-    // tslint:disable-next-line:no-unused-variable
-    public isExecutable(mode: BusinessRuleMode): boolean {
+    public isExecutable(__mode: BusinessRuleMode): boolean {
         return true;
     }
 

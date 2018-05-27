@@ -14,8 +14,7 @@ export abstract class BusinessRule<E> implements IBusinessRule<E> {
         return mode === this.mode || this.mode === BusinessRuleMode.ANY;
     }
 
-    // tslint:disable-next-line:no-unused-variable
-    public isApplicable(entity: E): boolean {
+    public isApplicable(__entity: E): boolean {
         return true;
     }
 
