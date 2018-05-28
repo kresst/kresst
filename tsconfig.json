@@ -20,5 +20,7 @@
         "noUnusedParameters": false,
         "noUnusedLocals": false,
         "strictNullChecks": true
-    }
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "test/**/*.spec.ts"]
 }

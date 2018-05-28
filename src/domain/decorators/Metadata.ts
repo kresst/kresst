@@ -21,9 +21,9 @@ export class Metadata implements IMetadata {
 
     public toString(): string {
         if (this.key === METADATA_KEYS.NAMED_TAG) {
-            return `Named: ${toString(this.value)} `;
+            return `Named: ${toString(this.value)}`;
         }
-        return `Tagged: { key:${toString(this.key)}, value: ${this.value} }`;
+        return `Tagged: { key: ${toString(this.key)}, value: ${this.value} }`;
     }
 }
 
