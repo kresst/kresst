@@ -5,7 +5,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/kresst/kresst/badge.svg?branch=dev)](https://coveralls.io/github/kresst/kresst?branch=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/kresst/kresst/badge.svg)](https://snyk.io/test/github/kresst/kresst)
 [![npm downloads](https://img.shields.io/npm/dm/kresst.svg)](https://npmjs.org/kresst)
-[![NPM](https://nodei.co/npm/kresst.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kresst/)
 
 > Lightweight opinionated Node.js REST supercharge
 
