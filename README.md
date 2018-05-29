@@ -1,6 +1,7 @@
 # kresst
 
 [![npm version](https://badge.fury.io/js/kresst.svg)](https://badge.fury.io/js/kresst)
+[![Build Status](https://travis-ci.org/kresst/kresst.svg?branch=dev)](https://travis-ci.org/kresst/kresst)
 [![Coverage Status](https://coveralls.io/repos/github/kresst/kresst/badge.svg?branch=dev)](https://coveralls.io/github/kresst/kresst?branch=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/kresst/kresst/badge.svg)](https://snyk.io/test/github/kresst/kresst)
 [![npm downloads](https://img.shields.io/npm/dm/kresst.svg)](https://npmjs.org/kresst)
