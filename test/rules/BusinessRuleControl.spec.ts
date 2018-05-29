@@ -1,4 +1,5 @@
 import { expect } from "chai";
+import { List } from "immutable";
 import { suite, test } from "mocha-typescript";
 import { IBusinessRule } from "../../src/domain/rules/IBusinessRule";
 import { StringPropertyRequiredRule } from "../../src/rules/required/string-property-required.rule";
@@ -12,20 +13,20 @@ class BusinessRuleControlSpec {
     "should initialize with no business rules if not defined"(): void {
         const emptyServiceMock = new EmptyServiceMock();
 
-        const rules: Array<IBusinessRule<any>> = emptyServiceMock.getBusinessRulesMock();
+        const rules: List<IBusinessRule<any>> = emptyServiceMock.getBusinessRulesMock();
 
-        expect(rules).to.be.instanceof(Array);
-        expect(rules).to.be.empty;
+        expect(rules).to.be.instanceof(List);
+        expect(rules.size).to.deep.equal(0);
     }
 
     @test
     "should initialize with business rules defined by subclass"(): void {
         const fakeServiceMock = new FakeServiceMock();
 
-        const rules: Array<IBusinessRule<FakeClassMock>> = fakeServiceMock.getBusinessRulesMock();
+        const rules: List<IBusinessRule<FakeClassMock>> = fakeServiceMock.getBusinessRulesMock();
 
-        expect(rules).to.be.instanceof(Array);
-        expect(rules).to.have.lengthOf(1);
-        expect(rules[0]).to.be.instanceof(StringPropertyRequiredRule);
+        expect(rules).to.be.instanceof(List);
+        expect(rules.size).to.deep.equal(1);
+        expect(rules.get(0)).to.be.instanceof(StringPropertyRequiredRule);
     }
 }

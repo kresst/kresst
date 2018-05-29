@@ -1,9 +1,10 @@
+import { List } from "immutable";
 import { BusinessRuleHelper } from "./BusinessRuleHelper";
 import { BusinessRuleMode } from "./BusinessRuleMode";
 import { IBusinessRule } from "./IBusinessRule";
 
 export abstract class BusinessRuleControl<T> {
-    protected readonly businessRules: Array<IBusinessRule<T>> = [];
+    protected readonly businessRules: List<IBusinessRule<T>> = List();
 
     protected constructor() {
         this.businessRules = this.getBusinessRules();
@@ -17,7 +18,7 @@ export abstract class BusinessRuleControl<T> {
         BusinessRuleHelper.applyBusinessRules(BusinessRuleMode.UPDATE, item, this.businessRules);
     }
 
-    protected getBusinessRules(): Array<IBusinessRule<T>> {
-        return [];
+    protected getBusinessRules(): List<IBusinessRule<T>> {
+        return List();
     }
 }

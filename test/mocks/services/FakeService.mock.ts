@@ -1,3 +1,4 @@
+import { List } from "immutable";
 import { BusinessRuleControl } from "../../../src/domain/rules/BusinessRuleControl";
 import { BusinessRuleMode } from "../../../src/domain/rules/BusinessRuleMode";
 import { IBusinessRule } from "../../../src/domain/rules/IBusinessRule";
@@ -27,11 +28,11 @@ export class FakeServiceMock extends BusinessRuleControl<FakeClassMock> {
         return fakeClassMock;
     }
 
-    public getBusinessRulesMock(): Array<IBusinessRule<any>> {
+    public getBusinessRulesMock(): List<IBusinessRule<any>> {
         return this.businessRules;
     }
 
-    protected getBusinessRules(): Array<IBusinessRule<FakeClassMock>> {
-        return [new StringPropertyRequiredRule<FakeClassMock>(BusinessRuleMode.ANY, "property")];
+    protected getBusinessRules(): List<IBusinessRule<FakeClassMock>> {
+        return List([new StringPropertyRequiredRule<FakeClassMock>(BusinessRuleMode.ANY, "property")]);
     }
 }

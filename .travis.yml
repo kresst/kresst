@@ -1,0 +1,29 @@
+sudo: false
+language: nodejs
+node_js:
+  - 8
+  - "stable"
+
+#before_script:
+#  - yarn build:prod
+
+script:
+  - yarn test
+
+after_script:
+  - "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+
+#deploy:
+#  - provider: releases
+#    api_key: $GITHUB_TOKEN
+#    file_glob: true
+#    file: "kresst-*.tgz"
+#    skip_cleanup: true
+#    on:
+#      tags: true
+#  - provider: npm
+#    skip_cleanup: true
+#    email: "youremail@example.com"
+#    api_key: $NPM_TOKEN
+#    on:
+#      tags: true

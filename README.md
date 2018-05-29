@@ -1,6 +1,12 @@
 # kresst
 
-_Lightweight opinionated Node.js REST supercharge_ **@** [kresst.raphaelmarques.fr](https://kresst.raphaelmarques.fr)
+[![npm version](https://badge.fury.io/js/kresst.svg)](https://badge.fury.io/js/kresst)
+[![Coverage Status](https://coveralls.io/repos/github/kresst/kresst/badge.svg?branch=dev)](https://coveralls.io/github/kresst/kresst?branch=dev)
+[![Known Vulnerabilities](https://snyk.io/test/github/kresst/kresst/badge.svg)](https://snyk.io/test/github/kresst/kresst)
+[![npm downloads](https://img.shields.io/npm/dm/kresst.svg)](https://npmjs.org/kresst)
+[![NPM](https://nodei.co/npm/kresst.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kresst/)
+
+> Lightweight opinionated Node.js REST supercharge
 
 ## Why kresst?
 
@@ -28,11 +34,11 @@ You can find documentation at [kresst.raphaelmarques.fr/docs](https://kresst.rap
 
 ## Contributing
 
-Before submitting an issue or a pull request, please take a moment to look over the [contributing guidelines](https://github.com/kresst/kresst/blob/master/docs/developers/contributing.md) first. For support using kresst, please post questions with the [`kresst` tag on Stack Overflow](http://stackoverflow.com/questions/tagged/kresst).
+Before submitting an issue or a pull request, please take a moment to look over the [contributing guidelines](./docs/developers/contributing.md) first. For support using kresst, please post questions with the [`kresst` tag on Stack Overflow](http://stackoverflow.com/questions/tagged/kresst).
 
 ## Building
 
-Instructions on building and testing kresst can be found in [the documentation](https://github.com/kresst/kresst/blob/master/docs/developers/contributing.md#building-and-testing).
+Instructions on building and testing kresst can be found in [the documentation](./docs/developers/contributing.md#building-and-testing).
 
 ## License
 

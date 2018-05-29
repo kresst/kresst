@@ -33,15 +33,18 @@ class InjectLessParamClass {
     }
 }
 
+/* istanbul ignore next: No need to test this mock class */
 class MissingInjectableParamClass {
     private readonly _primary: Primary;
     private readonly _secondary: Secondary;
 
+    /* istanbul ignore next */
     constructor(primary: Primary, secondary: Secondary) {
         this._primary = primary;
         this._secondary = secondary;
     }
 
+    /* istanbul ignore next */
     public get primary(): Primary {
         return this._primary;
     }
