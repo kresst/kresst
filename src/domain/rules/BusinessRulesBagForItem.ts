@@ -1,3 +1,4 @@
+import { List } from "immutable";
 import { isArray, isFunction } from "lodash";
 import Optional from "typescript-optional";
 import { VError } from "verror";
@@ -8,7 +9,7 @@ import { IBusinessRule } from "./IBusinessRule";
 
 export class BusinessRulesBagForItem<E, I> implements IBusinessRule<E> {
     private readonly itemsAccessor: Function;
-    private readonly businessRules: Array<IBusinessRule<I>>;
+    private readonly businessRules: List<IBusinessRule<I>>;
 
     constructor(itemsAccessor: Function, ...businessRules: Array<IBusinessRule<I>>) {
         if (!isFunction(itemsAccessor)) {
@@ -17,7 +18,7 @@ export class BusinessRulesBagForItem<E, I> implements IBusinessRule<E> {
         }
 
         this.itemsAccessor = itemsAccessor;
-        this.businessRules = isArray(businessRules) ? businessRules : [];
+        this.businessRules = isArray(businessRules) ? List(businessRules) : List();
     }
 
     public isApplicable(__object: E): boolean {
