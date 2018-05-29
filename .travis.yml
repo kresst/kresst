@@ -14,14 +14,13 @@ addons:
 
 before_script:
   - node -v
-  - npm -v
   - yarn
 #  - yarn build:prod
 
 script:
   - yarn test
 
-after_sucess:
+after_success:
   - "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
 
 #deploy:
