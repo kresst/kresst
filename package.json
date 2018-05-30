@@ -3,6 +3,7 @@
     "description": "Lightweight opinionated Node.js REST supercharge",
     "version": "1.0.0",
     "scripts": {
+        "integration": "ts-node integration",
         "build": "rimraf dist && tsc -p tsconfig.json --outDir dist",
         "build:prod": "rimraf dist && tsc -p tsconfig.json --outDir dist --noUnusedLocals --noUnusedParameters",
         "lint": "tslint -t stylish -c tslint.json -p tsconfig.json 'src/**/*.ts'",
