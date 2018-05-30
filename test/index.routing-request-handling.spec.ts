@@ -2,15 +2,15 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response, ServerOptions } from "restify";
 import { InternalServerError } from "restify-errors";
 import * as request from "supertest";
-import { Controller, DELETE, GET, HEAD, Method, PATCH, POST, PUT } from "../src";
+import { Resource, DELETE, GET, HEAD, Method, PATCH, POST, PUT } from "../src";
 import { testServerFactory } from "./utils/test.utils";
 
 @suite("Integration Tests: Routing & Request Handling")
 class IndexRoutingRequestHandlingSpec {
-    @test("should work for async controller methods")
-    public asyncControllerMethods(done: MochaDone): void {
-        @Controller()
-        class TestController {
+    @test("should work for async resource methods")
+    public asyncResourceMethods(done: MochaDone): void {
+        @Resource()
+        class TestResource {
             @GET()
             public getTest(req: Request, res: Response, next: Next): void {
                 setTimeout(() => {
@@ -20,31 +20,31 @@ class IndexRoutingRequestHandlingSpec {
             }
         }
 
-        request(testServerFactory(TestController))
+        request(testServerFactory(TestResource))
             .get("/")
             .set("Accept", "text/plain")
             .expect(200, "GET", done);
     }
 
-    @test("should work for async controller methods that fails")
-    public asyncControllerMethodsFailure(done: MochaDone): void {
-        @Controller()
-        class TestController {
+    @test("should work for async resource methods that fails")
+    public asyncResourceMethodsFailure(done: MochaDone): void {
+        @Resource()
+        class TestResource {
             @GET()
             public getTest(req: Request, res: Response, next: Next): void {
                 setTimeout(() => next(new InternalServerError()), 100);
             }
         }
 
-        request(testServerFactory(TestController))
+        request(testServerFactory(TestResource))
             .get("/")
             .expect(500, done);
     }
 
     @test("should work for each shortcut decorator")
     public eachShortcutDecorator(done: MochaDone): void {
-        @Controller()
-        class TestController {
+        @Resource()
+        class TestResource {
             @GET()
             public getTest(req: Request, res: Response, next: Next): void {
                 res.send(200, "GET");
@@ -82,7 +82,7 @@ class IndexRoutingRequestHandlingSpec {
             }
         }
 
-        const agent = request(testServerFactory(TestController));
+        const agent = request(testServerFactory(TestResource));
 
         const deleteFn = () => {
             agent
@@ -131,8 +131,8 @@ class IndexRoutingRequestHandlingSpec {
 
     @test("should work for more obscure HTTP methods using the @Method decorator")
     public obscureMethods(done: MochaDone): void {
-        @Controller()
-        class TestController {
+        @Resource()
+        class TestResource {
             @Method("opts", "/")
             public getTest(req: Request, res: Response, next: Next): void {
                 res.send(200, "OPTIONS");
@@ -140,7 +140,7 @@ class IndexRoutingRequestHandlingSpec {
             }
         }
 
-        request(testServerFactory(TestController))
+        request(testServerFactory(TestResource))
             .options("/")
             .set("Accept", "text/plain")
             .expect(200, "OPTIONS", done);
@@ -150,8 +150,8 @@ class IndexRoutingRequestHandlingSpec {
     public notPreventSendingResponseToClient(done: MochaDone): void {
         const result = { hello: "world" };
 
-        @Controller("/")
-        class TestController {
+        @Resource("/")
+        class TestResource {
             @GET("/")
             public getTest(req: Request, res: Response, next: Next): void {
                 res.json(result);
@@ -159,7 +159,7 @@ class IndexRoutingRequestHandlingSpec {
             }
         }
 
-        request(testServerFactory(TestController))
+        request(testServerFactory(TestResource))
             .get("/")
             .expect(200, JSON.stringify(result), done);
     }
@@ -168,15 +168,15 @@ class IndexRoutingRequestHandlingSpec {
     "should use returned values as response"(done: MochaDone): void {
         const result = { hello: "world" };
 
-        @Controller("/")
-        class TestController {
+        @Resource("/")
+        class TestResource {
             @GET("/")
             public getTest(req: Request, res: Response, next: Next): any {
                 return result;
             }
         }
 
-        request(testServerFactory(TestController))
+        request(testServerFactory(TestResource))
             .get("/")
             .expect(200, JSON.stringify(result), done);
     }
@@ -195,8 +195,8 @@ class IndexRoutingRequestHandlingSpec {
             }
         };
 
-        @Controller("/")
-        class TestController {
+        @Resource("/")
+        class TestResource {
             @GET("/")
             public getTest(req: Request, res: Response, next: Next): void {
                 res.json(result);
@@ -204,7 +204,7 @@ class IndexRoutingRequestHandlingSpec {
             }
         }
 
-        request(testServerFactory(TestController, serverOptions))
+        request(testServerFactory(TestResource, serverOptions))
             .get("/")
             .expect(customHeaderName, customHeaderValue)
             .expect(200, done);
@@ -224,8 +224,8 @@ class IndexRoutingRequestHandlingSpec {
             }
         };
 
-        @Controller("/")
-        class TestController {
+        @Resource("/")
+        class TestResource {
             @GET("/")
             public getTest(req: Request, res: Response, next: Next): void {
                 res.json(result);
@@ -234,7 +234,7 @@ class IndexRoutingRequestHandlingSpec {
         }
 
         request(
-            testServerFactory(TestController, serverOptions, {
+            testServerFactory(TestResource, serverOptions, {
                 basePath: "/v1"
             })
         )

@@ -1,9 +1,9 @@
 import { RequestHandler } from "restify";
 
-export interface ControllerMetadata<T> {
+export interface ResourceMetadata<T> {
     path?: string;
     middleware: Array<RequestHandler>;
     constructor: T;
 }
 
-export type ControllerMetadataList = Array<ControllerMetadata<any>>;
+export type ResourceMetadataList = Array<ResourceMetadata<any>>;

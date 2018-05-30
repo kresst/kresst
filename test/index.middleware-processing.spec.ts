@@ -6,7 +6,7 @@ import { Next, Request, RequestHandler, Response, Server } from "restify";
 import * as sinon from "sinon";
 import { SinonSpy } from "sinon";
 import * as request from "supertest";
-import { Controller, GET } from "../src";
+import { Resource, GET } from "../src";
 import { testServerFactory } from "./utils/test.utils";
 
 let spyA: SinonSpy;
@@ -46,8 +46,8 @@ class IndexMiddlewareProcessingSpec {
 
     @test("should call method-level middleware correctly")
     public callMethodLevelMiddlewareCorrectly(done: MochaDone): void {
-        @Controller()
-        class TestController {
+        @Resource()
+        class TestResource {
             @GET("/", spyA, spyB, spyC)
             public getTest(req: Request, res: Response, next: Next): void {
                 res.send("GET");
@@ -55,7 +55,7 @@ class IndexMiddlewareProcessingSpec {
             }
         }
 
-        request(testServerFactory(TestController))
+        request(testServerFactory(TestResource))
             .get("/")
             .expect(200, "GET", () => {
                 expect(spyA.calledOnce).to.deep.equal(true);
@@ -66,10 +66,10 @@ class IndexMiddlewareProcessingSpec {
             });
     }
 
-    @test("should call controller-level middleware correctly")
-    public callControllerLevelMiddlewareCorrectly(done: MochaDone): void {
-        @Controller("/", spyA, spyB, spyC)
-        class TestController {
+    @test("should call resource-level middleware correctly")
+    public callResourceLevelMiddlewareCorrectly(done: MochaDone): void {
+        @Resource("/", spyA, spyB, spyC)
+        class TestResource {
             @GET()
             public getTest(req: Request, res: Response, next: Next): void {
                 res.send("GET");
@@ -77,7 +77,7 @@ class IndexMiddlewareProcessingSpec {
             }
         }
 
-        request(testServerFactory(TestController))
+        request(testServerFactory(TestResource))
             .get("/")
             .expect(200, "GET", () => {
                 expect(spyA.calledOnce).to.deep.equal(true);
@@ -90,8 +90,8 @@ class IndexMiddlewareProcessingSpec {
 
     @test("should call server-level middleware correctly")
     public callServerLevelMiddlewareCorrectly(done: MochaDone): void {
-        @Controller()
-        class TestController {
+        @Resource()
+        class TestResource {
             @GET()
             public getTest(req: Request, res: Response, next: Next): void {
                 res.send("GET");
@@ -105,7 +105,7 @@ class IndexMiddlewareProcessingSpec {
             server.use(spyC);
         };
 
-        request(testServerFactory(TestController, undefined, undefined, serverConfigFn))
+        request(testServerFactory(TestResource, undefined, undefined, serverConfigFn))
             .get("/")
             .expect(200, "GET", () => {
                 expect(spyA.calledOnce).to.deep.equal(true);
@@ -118,8 +118,8 @@ class IndexMiddlewareProcessingSpec {
 
     @test("should call all middleware in correct order")
     public callAllMiddlewareInCorrectOrder(done: MochaDone): void {
-        @Controller("/", spyB)
-        class TestController {
+        @Resource("/", spyB)
+        class TestResource {
             @GET("/", spyC)
             public getTest(req: Request, res: Response, next: Next): void {
                 res.send("GET");
@@ -131,7 +131,7 @@ class IndexMiddlewareProcessingSpec {
             server.use(spyA);
         };
 
-        request(testServerFactory(TestController, undefined, undefined, serverConfigFn))
+        request(testServerFactory(TestResource, undefined, undefined, serverConfigFn))
             .get("/")
             .expect(200, "GET", () => {
                 expect(spyA.calledOnce).to.deep.equal(true);

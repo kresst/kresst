@@ -1,9 +1,9 @@
 import { isArray, isBoolean, isNil, isRegExp, isString, padStart } from "lodash";
 import { RequestHandler, Server } from "restify";
 import { ERROR_MESSAGES, METADATA_KEYS } from "../../domain/Constants";
-import { Controller } from "../../domain/decorators/Controller";
-import { ControllerMetadata } from "../../domain/decorators/ControllerMetadata";
-import { ControllerMethodMetadata, ControllerMethodMetadataList } from "../../domain/decorators/ControllerMethodMetadata";
+import { Resource } from "../../domain/decorators/Resource";
+import { ResourceMetadata } from "../../domain/decorators/ResourceMetadata";
+import { ResourceMethodMetadata, ResourceMethodMetadataList } from "../../domain/decorators/ResourceMethodMetadata";
 import { ModuleConfig } from "../../domain/decorators/ModuleConfig";
 import { Newable } from "../../domain/Newable";
 import { resolve } from "../resolver/resolver";
@@ -11,9 +11,9 @@ import { resolve } from "../resolver/resolver";
 interface RouteData {
     server: Server;
     instance: any;
-    metadata: ControllerMetadata<any>;
+    metadata: ResourceMetadata<any>;
     middleware: Array<RequestHandler>;
-    methodMetadata: ControllerMethodMetadata;
+    methodMetadata: ResourceMethodMetadata;
 }
 
 const dedupeSlashes = (value: string) => {
@@ -30,21 +30,21 @@ const debug = (moduleConfig: ModuleConfig, message: any) => {
     }
 };
 
-const getControllerPath = (moduleConfig: ModuleConfig, controllerMetadata: ControllerMetadata<any>): string => {
-    let controllerMetadataPath = "/";
+const getResourcePath = (moduleConfig: ModuleConfig, resourceMetadata: ResourceMetadata<any>): string => {
+    let resourceMetadataPath = "/";
 
     if (isString(moduleConfig.basePath)) {
-        controllerMetadataPath += moduleConfig.basePath.trim();
+        resourceMetadataPath += moduleConfig.basePath.trim();
     }
 
-    if (isString(controllerMetadata.path)) {
-        controllerMetadataPath += `/${controllerMetadata.path.trim()}`;
+    if (isString(resourceMetadata.path)) {
+        resourceMetadataPath += `/${resourceMetadata.path.trim()}`;
     }
 
-    return dedupeSlashes(controllerMetadataPath);
+    return dedupeSlashes(resourceMetadataPath);
 };
 
-const getServerMethod = (server: any, { key, method }: ControllerMethodMetadata): Function => {
+const getServerMethod = (server: any, { key, method }: ResourceMethodMetadata): Function => {
     if (!isString(method)) {
         throw new Error(ERROR_MESSAGES.METHOD_MUST_BE_A_STRING(key, method));
     }
@@ -79,24 +79,24 @@ const registerRoute = ({ server, instance, metadata, middleware, methodMetadata 
     return routeOptions.path;
 };
 
-const registerController = (controller: any, moduleConfig: ModuleConfig, server: Server, constructor: Newable) => {
-    const instance = resolve(controller, constructor);
+const registerResource = (resource: any, moduleConfig: ModuleConfig, server: Server, constructor: Newable) => {
+    const instance = resolve(resource, constructor);
 
-    const metadata: ControllerMetadata<any> = Reflect.getOwnMetadata(METADATA_KEYS.CONTROLLER, controller);
+    const metadata: ResourceMetadata<any> = Reflect.getOwnMetadata(METADATA_KEYS.RESOURCE, resource);
 
-    const controllerMethodMetadataList: ControllerMethodMetadataList = Reflect.getOwnMetadata(METADATA_KEYS.CONTROLLER_METHOD, controller);
+    const resourceMethodMetadataList: ResourceMethodMetadataList = Reflect.getOwnMetadata(METADATA_KEYS.RESOURCE_METHOD, resource);
 
-    if (isNil(metadata) || isNil(controllerMethodMetadataList)) {
+    if (isNil(metadata) || isNil(resourceMethodMetadataList)) {
         return;
     }
 
-    debug(moduleConfig, `@Controller discovered: ${metadata.constructor.name}`);
+    debug(moduleConfig, `@Resource discovered: ${metadata.constructor.name}`);
 
-    metadata.path = getControllerPath(moduleConfig, metadata);
+    metadata.path = getResourcePath(moduleConfig, metadata);
 
     const middleware = isArray(metadata.middleware) ? metadata.middleware : [];
 
-    controllerMethodMetadataList.forEach((methodMetadata: ControllerMethodMetadata) => {
+    resourceMethodMetadataList.forEach((methodMetadata: ResourceMethodMetadata) => {
         const path = registerRoute({
             server,
             instance,
@@ -109,10 +109,10 @@ const registerController = (controller: any, moduleConfig: ModuleConfig, server:
     });
 };
 
-const registerControllers = (constructor: Newable, moduleConfig: ModuleConfig, server: Server) => {
-    if (isArray(moduleConfig.controllers)) {
-        moduleConfig.controllers.forEach((controller: Controller) => {
-            registerController(controller, moduleConfig, server, constructor);
+const registerResources = (constructor: Newable, moduleConfig: ModuleConfig, server: Server) => {
+    if (isArray(moduleConfig.resources)) {
+        moduleConfig.resources.forEach((resource: Resource) => {
+            registerResource(resource, moduleConfig, server, constructor);
         });
     }
 };
@@ -141,7 +141,7 @@ export const Module = (moduleConfig: ModuleConfig) => {
             Reflect.defineMetadata(METADATA_KEYS.MODULE_CONFIG, moduleConfig, constructor);
 
             // registerProviders(constructor, moduleConfig);
-            registerControllers(constructor, moduleConfig, <Server>this[moduleConfig.restify]);
+            registerResources(constructor, moduleConfig, <Server>this[moduleConfig.restify]);
         };
 
         module.prototype = constructor.prototype;

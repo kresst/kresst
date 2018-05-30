@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { Method } from "../../../src";
 import { METADATA_KEYS } from "../../../src/domain/Constants";
-import { ControllerMethodMetadata, ControllerMethodMetadataList } from "../../../src/domain/decorators/ControllerMethodMetadata";
+import { ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../src/domain/decorators/ResourceMethodMetadata";
 
 @suite("Unit Test: @Method")
 class MethodDecoratorSpec {
@@ -13,7 +13,7 @@ class MethodDecoratorSpec {
         const method = "get";
         const middleware = [(req: Request, res: Response, next: Next) => {}];
 
-        class TestController {
+        class TestResource {
             @Method(method, path, ...middleware)
             public myRequestHandler(): void {}
 
@@ -24,15 +24,15 @@ class MethodDecoratorSpec {
             public test3(): void {}
         }
 
-        const methodMetadata: ControllerMethodMetadataList = Reflect.getMetadata(METADATA_KEYS.CONTROLLER_METHOD, TestController);
+        const methodMetadata: ResourceMethodMetadataList = Reflect.getMetadata(METADATA_KEYS.RESOURCE_METHOD, TestResource);
 
         expect(methodMetadata.length).to.deep.equal(3);
 
-        const metadata: ControllerMethodMetadata = methodMetadata[0];
+        const metadata: ResourceMethodMetadata = methodMetadata[0];
 
         expect(metadata.middleware).to.deep.equal(middleware);
         expect(metadata.options).to.deep.equal(path);
-        expect(metadata.target.constructor).to.deep.equal(TestController);
+        expect(metadata.target.constructor).to.deep.equal(TestResource);
         expect(metadata.key).to.deep.equal("myRequestHandler");
         expect(metadata.method).to.deep.equal(method);
     }

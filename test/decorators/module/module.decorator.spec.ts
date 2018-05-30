@@ -1,15 +1,15 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import * as restify from "restify";
-import { Controller, Method, Module } from "../../../src";
+import { Resource, Method, Module } from "../../../src";
 import { ERROR_MESSAGES } from "../../../src/domain/Constants";
 
 @suite("Unit Test: @Module")
 class ModuleDecoratorSpec {
-    @test("should generate routes for controller methods")
-    public generateRoutesForControllerMethods(): void {
-        @Controller("root")
-        class TestController {
+    @test("should generate routes for resource methods")
+    public generateRoutesForResourceMethods(): void {
+        @Resource("root")
+        class TestResource {
             @Method("get", "routeOne")
             public routeOne(): void {}
 
@@ -22,7 +22,7 @@ class ModuleDecoratorSpec {
 
         @Module({
             restify: "server",
-            controllers: [TestController]
+            resources: [TestResource]
         })
         class Server {
             public server: restify.Server = restify.createServer();
@@ -41,10 +41,10 @@ class ModuleDecoratorSpec {
         expect(routes.getrootroutethree.spec.path).to.equal("/root/routeThree");
     }
 
-    @test("should generate routes for controller methods using basePath")
-    public generateRoutesForControllerMethodsUsingBasePath(): void {
-        @Controller("root")
-        class TestController {
+    @test("should generate routes for resource methods using basePath")
+    public generateRoutesForResourceMethodsUsingBasePath(): void {
+        @Resource("root")
+        class TestResource {
             @Method("get", "routeOne")
             public routeOne(): void {}
 
@@ -58,7 +58,7 @@ class ModuleDecoratorSpec {
         @Module({
             basePath: "v1",
             restify: "server",
-            controllers: [TestController]
+            resources: [TestResource]
         })
         class Server {
             public server: restify.Server = restify.createServer();
@@ -77,10 +77,10 @@ class ModuleDecoratorSpec {
         expect(routes.getv1rootroutethree.spec.path).to.equal("/v1/root/routeThree");
     }
 
-    @test("should handle routes slashes correctly for controller methods")
-    public handleRoutesSlashesCorrectlyForControllerMethods(): void {
-        @Controller("/root")
-        class TestController {
+    @test("should handle routes slashes correctly for resource methods")
+    public handleRoutesSlashesCorrectlyForResourceMethods(): void {
+        @Resource("/root")
+        class TestResource {
             @Method("get", "/routeOne")
             public routeOne(): void {}
 
@@ -94,7 +94,7 @@ class ModuleDecoratorSpec {
         @Module({
             basePath: "//v1",
             restify: "server",
-            controllers: [TestController]
+            resources: [TestResource]
         })
         class Server {
             public server: restify.Server = restify.createServer();
@@ -119,15 +119,15 @@ class ModuleDecoratorSpec {
         const route = "routeOne";
 
         const desiredMethodNotString = () => {
-            @Controller()
-            class TestController {
+            @Resource()
+            class TestResource {
                 @Method(<any>method, route)
                 public routeOne(): void {}
             }
 
             @Module({
                 restify: "server",
-                controllers: [TestController]
+                resources: [TestResource]
             })
             class Server {
                 public server: restify.Server = restify.createServer();
@@ -145,15 +145,15 @@ class ModuleDecoratorSpec {
         const route = "routeOne";
 
         const desiredMethodNotString = () => {
-            @Controller()
-            class TestController {
+            @Resource()
+            class TestResource {
                 @Method(method, route)
                 public routeOne(): void {}
             }
 
             @Module({
                 restify: "server",
-                controllers: [TestController]
+                resources: [TestResource]
             })
             class Server {
                 public server: restify.Server = restify.createServer();

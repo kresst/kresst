@@ -1,7 +1,7 @@
 import { camelCase, isString } from "lodash";
 import { RequestHandler } from "restify";
 import { METADATA_KEYS } from "../../domain/Constants";
-import { ControllerMetadata } from "../../domain/decorators/ControllerMetadata";
+import { ResourceMetadata } from "../../domain/decorators/ResourceMetadata";
 import { Newable } from "../../domain/Newable";
 import { makeInjectable } from "../injectable/injectable.decorator";
 
@@ -21,11 +21,11 @@ const sanitizePath = (path: string = "", defaultPath: string): string => {
     return dedupeSlashes(`/${_path}`);
 };
 
-export const Controller = (path?: string, ...middleware: Array<RequestHandler>) => {
+export const Resource = (path?: string, ...middleware: Array<RequestHandler>) => {
     return <T extends Newable>(constructor: T) => {
         path = sanitizePath(path, constructor.name);
-        const key = METADATA_KEYS.CONTROLLER;
-        const metadata: ControllerMetadata<T> = {
+        const key = METADATA_KEYS.RESOURCE;
+        const metadata: ResourceMetadata<T> = {
             path,
             middleware,
             constructor

@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Module } from "./decorators/module/module.decorator";
-import { Controller } from "./decorators/controller/controller.decorator";
+import { Resource } from "./decorators/resource/resource.decorator";
 import { Method } from "./decorators/method/method.decorator";
 import { GET } from "./decorators/get/get.decorator";
 import { POST } from "./decorators/post/post.decorator";
@@ -15,7 +15,7 @@ import { Inject } from "./decorators/inject/inject.decorator";
 export {
     // DECORATORS
     Module,
-    Controller,
+    Resource,
     Method,
     GET,
     POST,

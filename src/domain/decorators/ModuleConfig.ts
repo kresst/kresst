@@ -1,4 +1,4 @@
-import { ControllerList } from "./Controller";
+import { ResourceList } from "./Resource";
 import * as bunyan from "bunyan";
 import { NewableList } from "../Newable";
 
@@ -8,5 +8,5 @@ export interface ModuleConfig {
     restify: string;
     basePath?: string;
     providers?: NewableList;
-    controllers?: ControllerList;
+    resources?: ResourceList;
 }

@@ -4,14 +4,14 @@ import { Server, ServerOptions } from "restify";
 import { Module } from "../../src";
 
 export const testServerFactory = (
-    controller: any,
+    resource: any,
     serverOptions?: ServerOptions,
     moduleConfig?: any,
     serverConfigFn?: (server: Server) => void
 ): Server => {
     const defaultConfig = {
         restify: "server",
-        controllers: [controller]
+        resources: [resource]
     };
 
     const _moduleConfig = merge({}, defaultConfig, moduleConfig || {});

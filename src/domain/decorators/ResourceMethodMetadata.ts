@@ -3,7 +3,7 @@ import { RequestHandler } from "restify";
 export type StrOrRegex = string | RegExp;
 export type RouteOptions = StrOrRegex | { path: StrOrRegex } | { options: Object; path: StrOrRegex } & Object;
 
-export interface ControllerMethodMetadata {
+export interface ResourceMethodMetadata {
     options: RouteOptions;
     middleware: Array<RequestHandler>;
     target: any;
@@ -11,4 +11,4 @@ export interface ControllerMethodMetadata {
     key: string;
 }
 
-export type ControllerMethodMetadataList = Array<ControllerMethodMetadata>;
+export type ResourceMethodMetadataList = Array<ResourceMethodMetadata>;
