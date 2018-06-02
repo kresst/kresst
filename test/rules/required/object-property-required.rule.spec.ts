@@ -1,10 +1,10 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import Optional from "typescript-optional";
-import { KresstError } from "../../../src/domain/errors/KresstError";
-import { BusinessRuleMode } from "../../../src/domain/rules/BusinessRuleMode";
-import { ObjectPropertyRequiredRule } from "../../../src/rules/required/object-property-required.rule";
-import { FakeClassMock } from "../../mocks/domain/FakeClass.mock";
+import { KresstError } from "../../../src/domain/errors";
+import { BusinessRuleMode } from "../../../src/domain/rules";
+import { ObjectPropertyRequiredRule } from "../../../src/rules/required";
+import { FakeClassMock } from "../../utils/mocks/domain/FakeClass.mock";
 
 describe("Unit Test: ObjectPropertyRequiredBusinessRule", () => {
     const rule: ObjectPropertyRequiredRule<FakeClassMock> = new ObjectPropertyRequiredRule<FakeClassMock>(BusinessRuleMode.ANY, "property");

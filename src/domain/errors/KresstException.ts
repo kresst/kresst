@@ -1,5 +1,5 @@
 import { Dictionary } from "lodash";
-import { HttpStatus } from "../HttpStatus";
+import { HttpStatus } from "../http/HttpStatus";
 
 export class KresstException extends Error {
     public readonly id: string;

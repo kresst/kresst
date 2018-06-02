@@ -18,6 +18,11 @@ export class Server {
 
         if (isUndefined(restifyServer)) {
             this.server = restify.createServer(serverOptions || { name: "kresst-integration-server" });
+
+            this.server.use(restify.plugins.bodyParser({ rejectUnknown: true }));
+            this.server.use(restify.plugins.queryParser({ mapParams: false }));
+            this.server.use(restify.plugins.fullResponse());
+            this.server.use(restify.plugins.gzipResponse());
         }
     }
 

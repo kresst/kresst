@@ -19,6 +19,8 @@ before_script:
 
 script:
   - yarn test
+  - yarn lint
+  - yarn build:prod
 
 after_success:
   - "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"

@@ -1,10 +1,10 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import Optional from "typescript-optional";
-import { KresstError } from "../../../src/domain/errors/KresstError";
-import { BusinessRuleMode } from "../../../src/domain/rules/BusinessRuleMode";
-import { StringFormatRule } from "../../../src/rules/format/string-format.rule";
-import { FakeClassMock } from "../../mocks/domain/FakeClass.mock";
+import { KresstError } from "../../../src/domain/errors";
+import { BusinessRuleMode } from "../../../src/domain/rules";
+import { StringFormatRule } from "../../../src/rules/format";
+import { FakeClassMock } from "../../utils/mocks/domain/FakeClass.mock";
 
 describe("Unit Test: StringFormatBusinessRule", () => {
     const rule: StringFormatRule<FakeClassMock> = new StringFormatRule<FakeClassMock>(BusinessRuleMode.ANY, "property", "[a-zA-Z0-9]{5}");

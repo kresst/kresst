@@ -1,1 +1,1 @@
-export type HandlerDecorator = (target: any, key: string, value: any) => void;
+export type HandlerDecorator = (target: any, propertyKey: string, descriptor: PropertyDescriptor) => void;

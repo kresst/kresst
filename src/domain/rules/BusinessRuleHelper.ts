@@ -1,5 +1,5 @@
 import { List } from "immutable";
-import { isArray, isNil } from "lodash";
+import { isNil } from "lodash";
 import Optional from "typescript-optional";
 import { VError } from "verror";
 import { KresstError } from "../errors/KresstError";
@@ -12,14 +12,14 @@ export class BusinessRuleHelper {
     }
 
     public static check<I>(mode: BusinessRuleMode, item: I, businessRules: List<IBusinessRule<I>> = List()): Optional<KresstError<any>> {
-        if (isNil(mode) || isNil(item) || !isArray(businessRules)) {
+        if (isNil(mode) || isNil(item) || !List.isList(businessRules)) {
             const error = new ReferenceError(
                 `(mode, item, businessRules) properties must be properly defined. Got: (${mode}, ${item}, ${businessRules})`
             );
             throw new VError(error, "BusinessRuleHelper#check failed");
         }
 
-        for (const businessRule of businessRules) {
+        for (const businessRule of businessRules.toArray()) {
             if (businessRule.isExecutable(mode) && businessRule.isApplicable(item)) {
                 const checkResult: Optional<KresstError<any>> = businessRule.check(mode, item);
 

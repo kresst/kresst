@@ -17,7 +17,7 @@
         "comment-format": [true, "check-space"],
         "curly": true,
         "forin": true,
-        "import-blacklist": [true, "rxjs"],
+        "import-blacklist": [false, "rxjs"],
         "import-spacing": true,
         "indent": [true, "spaces"],
         "interface-over-type-literal": true,

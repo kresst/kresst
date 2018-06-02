@@ -1,6 +1,6 @@
 import { isNil } from "lodash";
 import { v4 as uuid } from "uuid";
-import { HttpStatus } from "../HttpStatus";
+import { HttpStatus } from "../http/HttpStatus";
 import { KresstException } from "./KresstException";
 
 export class KresstError<T> {

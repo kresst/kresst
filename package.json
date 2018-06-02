@@ -14,7 +14,8 @@
     "nyc": {
         "check-coverage": true,
         "exclude": [
-            "**/*.d.ts"
+            "**/*.d.ts",
+            "integration/**/*.ts"
         ],
         "include": [
             "src/**/*.ts",

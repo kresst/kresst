@@ -1,14 +1,14 @@
+import { List } from "immutable";
 import { RequestHandler } from "restify";
-
-export type StrOrRegex = string | RegExp;
-export type RouteOptions = StrOrRegex | { path: StrOrRegex } | { options: Object; path: StrOrRegex } & Object;
+import { RouteOptions } from "../router/RouteOptions";
 
 export interface ResourceMethodMetadata {
-    options: RouteOptions;
-    middleware: Array<RequestHandler>;
+    key: string;
     target: any;
     method: string;
-    key: string;
+    options: RouteOptions;
+    middleware: List<RequestHandler>;
 }
 
-export type ResourceMethodMetadataList = Array<ResourceMethodMetadata>;
+export type ResourceMethodMetadataList = List<ResourceMethodMetadata>;
+export type ResourceMethodMetadataArray = Array<ResourceMethodMetadata>;
