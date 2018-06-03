@@ -1,6 +1,7 @@
 <p align="center"><a href="https://kresst.raphaelmarques.fr/docs"><img src="https://raphaelmarques.fr/kresst/kresst-logo.png" alt="kresst" height="50"/></a></p>
 
 <p align="center">
+
 [![npm version](https://badge.fury.io/js/kresst.svg)](https://badge.fury.io/js/kresst)
 [![Build Status](https://travis-ci.org/kresst/kresst.svg?branch=dev)](https://travis-ci.org/kresst/kresst)
 [![GitHub issues](https://img.shields.io/github/issues/kresst/kresst.svg)](https://github.com/kresst/kresst/issues)
@@ -11,6 +12,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/kresst/kresst/badge.svg)](https://snyk.io/test/github/kresst/kresst)
 [![npm downloads](https://img.shields.io/npm/dm/kresst.svg)](https://npmjs.org/kresst)
 [![GitHub license](https://img.shields.io/github/license/kresst/kresst.svg)](https://github.com/kresst/kresst/blob/master/LICENSE)
+
 </p>
 
 > Lightweight opinionated Node.js REST supercharge
