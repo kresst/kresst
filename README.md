@@ -4,9 +4,7 @@
     </a>
 </p>
 
-<p align="center">
-    <h1>kresst</h1>
-</p>
+<h1 align="center">kresst</h1>
 
 <p align="center">
 
