@@ -1,5 +1,6 @@
 export const METADATA_KEYS = {
     RAW: Symbol.for("kresst:raw"),
+    PARAM: Symbol.for("kresst:param"),
     TAGGED: Symbol.for("kresst:tagged"),
     NAMED_TAG: Symbol.for("kresst:named"),
     INJECT_TAG: Symbol.for("kresst:inject"),

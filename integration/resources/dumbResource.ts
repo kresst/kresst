@@ -1,5 +1,6 @@
 import { Next, Request, Response } from "restify";
-import { GET, PATCH, POST, Raw, Resource } from "../../src";
+import Optional from "typescript-optional";
+import { GET, Param, ParamLocation, POST, Raw, Resource } from "../../src";
 import { DumbService } from "../services/dumb.service";
 
 @Resource("dumb")
@@ -8,10 +9,13 @@ export class DumbResource {
 
     constructor(private readonly dumbService: DumbService) {}
 
-    @GET(":name")
-    public getName(name: string): string {
+    @GET(":firstName/:lastName")
+    public getName(firstName: string, lastName: Optional<string>): string {
         this.dumbService.action();
-        return `${name} ${this._hello++}`;
+
+        const name = lastName.map((name: string) => ` ${name}`).orElse(" Unknown");
+
+        return `[${this._hello++}] Hello ${firstName}${name}!`;
     }
 
     @Raw
@@ -20,5 +24,11 @@ export class DumbResource {
         this.dumbService.action();
         response.send(`${request.params.name} ${this._hello++}`);
         return next();
+    }
+
+    @POST()
+    public postName(@Param(ParamLocation.HEADER) name: string): string {
+        this.dumbService.action();
+        return `${name} ${this._hello++}`;
     }
 }

@@ -3,8 +3,8 @@ import { RequestHandler } from "restify";
 import { RouteOptions } from "../router/RouteOptions";
 
 export interface ResourceMethodMetadata {
-    key: string;
-    target: any;
+    key: string | symbol;
+    target: Object;
     method: string;
     options: RouteOptions;
     middleware: List<RequestHandler>;

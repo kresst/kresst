@@ -10,7 +10,7 @@ import { DELETE, GET, HEAD, Method, PATCH, POST, PUT, Raw, Resource } from "../.
 import { testServerFactory } from "../utils/test/testServerFactory.utils";
 
 @suite("Integration Tests: Routing & Request Handling")
-class IndexRoutingRequestHandlingSpec {
+class RequestHandlingSpec {
     @test
     "should work for async resource methods"(done: MochaDone): void {
         @Resource()

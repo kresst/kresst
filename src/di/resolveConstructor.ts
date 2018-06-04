@@ -9,8 +9,8 @@ import { resolverFactory } from "./resolverFactory";
 *
 * Creates or returns an instance as a singleton from given constructor.
 * */
-export const resolveConstructor = (constructor: Newable, target?: Newable): any => {
-    let instances: Map<string, Newable> = Map();
+export const resolveConstructor = <T>(constructor: any, target?: Newable): T => {
+    let instances: Map<string, T> = Map();
 
     // Read existing instances if available
     if (!isNil(target) && Reflect.hasMetadata(METADATA_KEYS.MODULE_PROVIDERS, target)) {

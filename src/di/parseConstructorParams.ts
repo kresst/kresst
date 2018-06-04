@@ -11,7 +11,7 @@ import { ERROR_MESSAGES, Inject, METADATA_KEYS, MetadataList, Newable } from "..
 * This allows for simpler parsing algorithm later on in resolverFactory.
 * */
 export const parseConstructorParams = <T extends Newable>(constructor: T): T => {
-    let constructorRef = constructor;
+    let constructorRef: T = constructor;
     let constructorParams: List<Newable> = List();
     const decoratedParams: Map<string, MetadataList<Newable>> = Map(Reflect.getMetadata(METADATA_KEYS.TAGGED, constructor));
 

@@ -2,12 +2,12 @@ import { Next, Request, RequestHandler, Response } from "restify";
 import { from, isObservable, of } from "rxjs/index";
 import { KresstRequestResult, SimpleRequestHandler } from "../../../domain";
 import { handleRequestHandlerResult } from "./handleRequestHandlerResult";
-import { matchAndApplyRequestArgsToRequestHandler } from "./matchAndApplyRequestArgsToRequestHandler";
+import { matchAndApplyRequestArgsToHandler } from "./matchAndApplyRequestArgsToHandler";
 
-export const craftCustomRequestHandler = (handler: SimpleRequestHandler, instance: any): RequestHandler => {
+export const craftCustomRequestHandler = (handler: SimpleRequestHandler, instance: Object, key: string): RequestHandler => {
     return (request: Request, response: Response, next: Next): void => {
         try {
-            const result: KresstRequestResult = matchAndApplyRequestArgsToRequestHandler(handler, instance, request);
+            const result: KresstRequestResult = matchAndApplyRequestArgsToHandler(request, handler, instance, key);
 
             if (isObservable(result)) {
                 return handleRequestHandlerResult(result, response, next);

@@ -12,15 +12,15 @@ import { tagProperty } from "./tagProperty";
 * @Inject() decorator allows to set kresst up to
 * inject specific data in place of desired value.
 * */
-export const Inject = (injectorIdentifier?: string | Newable) => {
-    return (target: any, targetKey: string, index?: number): any => {
+export const Inject = <T>(injectorIdentifier?: string | Newable): any => {
+    return (target: T, propertyKey: string | symbol, parameterIndex: number): T => {
         let identifier = injectorIdentifier;
 
         if (isNil(identifier)) {
-            if (isNumber(index)) {
-                identifier = Reflect.getMetadata(METADATA_KEYS.DESIGN_PARAM_TYPES, target)[index];
+            if (isNumber(parameterIndex)) {
+                identifier = Reflect.getMetadata(METADATA_KEYS.DESIGN_PARAM_TYPES, target)[parameterIndex];
             } else {
-                identifier = Reflect.getMetadata(METADATA_KEYS.DESIGN_TYPE, target, targetKey);
+                identifier = Reflect.getMetadata(METADATA_KEYS.DESIGN_TYPE, target, propertyKey);
             }
 
             if (isNil(identifier)) {
@@ -30,10 +30,10 @@ export const Inject = (injectorIdentifier?: string | Newable) => {
 
         const metadata = new Metadata(METADATA_KEYS.INJECT_TAG, identifier);
 
-        if (isNumber(index)) {
-            tagParameter(target, targetKey, index, metadata);
+        if (isNumber(parameterIndex)) {
+            tagParameter(target, propertyKey, parameterIndex, metadata);
         } else {
-            tagProperty(target, targetKey, metadata);
+            tagProperty(target, propertyKey, metadata);
         }
 
         return target;

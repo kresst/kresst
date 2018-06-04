@@ -1,6 +1,6 @@
-import { HandlerDecorator, Method, RouteOptions } from "../../../index";
 import { RequestHandler } from "restify";
+import { HTTPMethodDecorator, Method, RouteOptions } from "../../../index";
 
-export const OPTIONS = (options: RouteOptions = "/", ...middleware: Array<RequestHandler>): HandlerDecorator => {
+export const OPTIONS: HTTPMethodDecorator = (options: RouteOptions = "/", ...middleware: Array<RequestHandler>): MethodDecorator => {
     return Method("opts", options, ...middleware);
 };

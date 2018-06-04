@@ -53,7 +53,7 @@ class MissingInjectableParamClass {
 class InjectParametersDecoratorSpec {
     @test
     "should inject proper data for @Inject()-less-type parameters"(): void {
-        const instance: InjectLessParamClass = resolveConstructor(InjectLessParamClass);
+        const instance: InjectLessParamClass = resolveConstructor<InjectLessParamClass>(InjectLessParamClass);
 
         expect(instance.primary).to.be.instanceof(Primary);
         expect(instance.secondary).to.be.instanceof(Secondary);
@@ -62,7 +62,7 @@ class InjectParametersDecoratorSpec {
     @test
     "should throw when incorrectly configured"(): void {
         const missingDecorator = () => {
-            const instance: MissingInjectableParamClass = resolveConstructor(MissingInjectableParamClass);
+            const instance: MissingInjectableParamClass = resolveConstructor<MissingInjectableParamClass>(MissingInjectableParamClass);
         };
 
         expect(missingDecorator).to.throw(ERROR_MESSAGES.MISSING_INJECTABLE_DECORATOR("MissingInjectableParamClass"));

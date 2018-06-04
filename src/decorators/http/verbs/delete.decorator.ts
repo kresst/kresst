@@ -1,6 +1,6 @@
 import { RequestHandler } from "restify";
-import { HandlerDecorator, Method, RouteOptions } from "../../../index";
+import { HTTPMethodDecorator, Method, RouteOptions } from "../../../index";
 
-export const DELETE = (options: RouteOptions = "/", ...middleware: Array<RequestHandler>): HandlerDecorator => {
+export const DELETE: HTTPMethodDecorator = (options: RouteOptions = "/", ...middleware: Array<RequestHandler>): MethodDecorator => {
     return Method("del", options, ...middleware);
 };

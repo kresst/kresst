@@ -4,10 +4,15 @@ import "reflect-metadata";
 import { ERROR_MESSAGES, Inject, METADATA_KEYS } from "../../../../src/index";
 import { decorate } from "../../../utils/test/decorate";
 
-declare function __decorate(decorators: Array<ClassDecorator>, target: any, key?: any, desc?: any): void;
+declare function __decorate(
+    decorators: Array<ClassDecorator>,
+    target: Object,
+    propertyKey: string | symbol,
+    descriptor?: TypedPropertyDescriptor<any>
+): void;
 
 const __param = (paramIndex: number, decorator: ParameterDecorator): any => {
-    return (target: any, key: string): void => decorator(target, key, paramIndex);
+    return (target: Object, propertyKey: string | symbol): void => decorator(target, propertyKey, paramIndex);
 };
 
 interface Primary {}

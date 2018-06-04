@@ -4,7 +4,7 @@ import { KresstRequestHandler, ResourceMetadata, ResourceMethodMetadata } from "
 
 export interface IRouteData {
     server: Server;
-    instance: any;
+    instance: Object;
     metadata: ResourceMetadata<any>;
     middleware: List<KresstRequestHandler>;
     methodMetadata: ResourceMethodMetadata;

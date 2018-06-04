@@ -14,7 +14,7 @@ let spyB: SinonSpy;
 let spyC: SinonSpy;
 
 @suite("Integration Tests: Middleware Processing")
-class IndexMiddlewareProcessingSpec {
+class MiddlewareProcessingSpec {
     private readonly middleware: Dictionary<RequestHandler>;
 
     private result: string;

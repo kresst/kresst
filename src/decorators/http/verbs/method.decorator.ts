@@ -1,17 +1,17 @@
 import { List } from "immutable";
 import { RequestHandler } from "restify";
 import { METADATA_KEYS } from "../../../domain/constants";
-import { HandlerDecorator, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../domain/decorators";
+import { ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../domain/decorators";
 import { RouteOptions } from "../../../domain/router";
 
-export const Method = (method: string, options: RouteOptions, ...middleware: Array<RequestHandler>): HandlerDecorator => {
-    return (target: any, key: string): void => {
+export const Method = (method: string, options: RouteOptions, ...middleware: Array<RequestHandler>): MethodDecorator => {
+    return (target: Object, propertyKey: string | symbol): void => {
         const metadata: ResourceMethodMetadata = {
             options,
             middleware: List(middleware),
             method,
             target,
-            key
+            key: propertyKey
         };
         let metadataList: ResourceMethodMetadataList = List();
 

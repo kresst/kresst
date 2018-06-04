@@ -1,6 +1,5 @@
 import { METADATA_KEYS } from "../../../domain/constants";
-import { HandlerDecorator } from "../../../domain/decorators";
 
-export const Raw: HandlerDecorator = (target: any, propertyKey: string): void => {
+export const Raw: MethodDecorator = (target: Object, propertyKey: string | symbol): void => {
     Reflect.defineMetadata(METADATA_KEYS.RAW, true, target, propertyKey);
 };
