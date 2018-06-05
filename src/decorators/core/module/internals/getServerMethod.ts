@@ -1,6 +1,6 @@
 import { isString, isNil } from "lodash";
 import { VError } from "verror";
-import { ERROR_MESSAGES, ResourceMethodMetadata } from "../../../domain";
+import { ERROR_MESSAGES, ResourceMethodMetadata } from "../../../../domain/index";
 
 export const getServerMethod = (server: any, { key, method }: ResourceMethodMetadata): Function => {
     if (!isString(method)) {

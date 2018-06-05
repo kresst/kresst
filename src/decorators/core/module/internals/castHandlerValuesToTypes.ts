@@ -1,7 +1,7 @@
 import { List } from "immutable";
 import { isArray, isFunction, isNil, isObject, merge } from "lodash";
 import Optional from "typescript-optional";
-import { METADATA_KEYS } from "../../../index";
+import { METADATA_KEYS } from "../../../../index";
 
 const castTo = (value: any, type: any): any => {
     if (isNil(value)) {

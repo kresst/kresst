@@ -1,6 +1,6 @@
 import { isNil, padStart } from "lodash";
 import { Server } from "restify";
-import { resolveConstructor } from "../../../di";
+import { resolveConstructor } from "../../../../di/index";
 import {
     METADATA_KEYS,
     ModuleConfig,
@@ -8,7 +8,7 @@ import {
     ResourceMetadata,
     ResourceMethodMetadata,
     ResourceMethodMetadataArray
-} from "../../../domain";
+} from "../../../../domain/index";
 import { debug } from "./debug";
 import { getResourcePath } from "./getResourcePath";
 import { registerRoute } from "./registerRoute";

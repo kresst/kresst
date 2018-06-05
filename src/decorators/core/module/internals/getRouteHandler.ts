@@ -1,6 +1,6 @@
 import { isNil } from "lodash";
 import * as VError from "verror";
-import { KresstRequestHandler, METADATA_KEYS } from "../../../domain";
+import { KresstRequestHandler, METADATA_KEYS } from "../../../../domain/index";
 import { craftCustomRequestHandler } from "./craftCustomRequestHandler";
 
 export const getRouteHandler = (instance: Object, key: string | symbol): KresstRequestHandler => {

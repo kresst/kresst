@@ -1,9 +1,9 @@
 import { isRegExp, isString } from "lodash";
-import { KresstRequestHandler } from "../../../domain";
-import { dedupeSlashes } from "../../../utils";
+import { KresstRequestHandler } from "../../../../domain/index";
+import { dedupeSlashes } from "../../../../utils/index";
 import { getRouteHandler } from "./getRouteHandler";
 import { getServerMethod } from "./getServerMethod";
-import { IRouteData } from "./IRouteData";
+import { IRouteData } from "../../../../domain/decorators/IRouteData";
 
 export const registerRoute = ({ server, instance, metadata, middleware, methodMetadata }: IRouteData): string => {
     const serverMethod: Function = getServerMethod(server, methodMetadata);

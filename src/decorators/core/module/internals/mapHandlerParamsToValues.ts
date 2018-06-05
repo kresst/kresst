@@ -1,7 +1,7 @@
 import { List, Map } from "immutable";
 import { isFunction } from "lodash";
 import { Request } from "restify";
-import { METADATA_KEYS, ParamLocation } from "../../../index";
+import { METADATA_KEYS, ParamLocation } from "../../../../index";
 
 export const mapHandlerParamsToValues = (params: List<string>, request: Request, instance: Object, key: string): List<any> => {
     const requestBody: Map<string, any> = Map(request.body);

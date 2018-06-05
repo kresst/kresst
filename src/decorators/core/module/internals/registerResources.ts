@@ -1,6 +1,6 @@
 import { isArray } from "lodash";
 import { Server } from "restify";
-import { IResource, ModuleConfig, Newable } from "../../../domain";
+import { IResource, ModuleConfig, Newable } from "../../../../domain/index";
 import { registerResource } from "./registerResource";
 
 export const registerResources = (constructor: Newable, moduleConfig: ModuleConfig, server: Server) => {

@@ -1,4 +1,4 @@
-import { ModuleConfig } from "../../../domain";
+import { ModuleConfig } from "../../../../domain/index";
 import { isBoolean, isNil } from "lodash";
 
 export const debug = (moduleConfig: ModuleConfig, message: any): void => {

@@ -1,6 +1,6 @@
 import { Server } from "restify";
 import { METADATA_KEYS, ModuleConfig, Newable } from "../../../domain/index";
-import { registerResources } from "./registerResources";
+import { registerResources } from "./internals/registerResources";
 
 // const registerProviders = (constructor: Newable, moduleConfig: ModuleConfig) => {
 // if (isArray(moduleConfig.providers)) {
