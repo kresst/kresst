@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://kresst.raphaelmarques.fr/docs">
-        <img src="https://raphaelmarques.fr/kresst/kresst-logo.png" alt="kresst" height="50"/>
+        <img src="https://raphaelmarques.fr/assets/img/logos/kresst-logo.png" alt="kresst" height="50"/>
     </a>
 </p>
 
