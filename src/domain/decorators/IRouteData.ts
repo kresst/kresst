@@ -6,6 +6,5 @@ export interface IRouteData {
     server: Server;
     instance: Object;
     metadata: ResourceMetadata<any>;
-    middleware: List<KresstRequestHandler>;
     methodMetadata: ResourceMethodMetadata;
 }

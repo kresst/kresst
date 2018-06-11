@@ -1,5 +1,5 @@
 import { ModuleConfig, ResourceMetadata } from "../../../../domain/index";
-import { dedupeSlashes } from "../../../../utils/index";
+import { dedupeSlashes } from "../../../../utils";
 import { isString } from "lodash";
 
 export const getResourcePath = (moduleConfig: ModuleConfig, resourceMetadata: ResourceMetadata<any>): string => {

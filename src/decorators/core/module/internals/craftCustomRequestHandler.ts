@@ -1,6 +1,6 @@
 import { Next, Request, RequestHandler, Response } from "restify";
-import { from, isObservable, of } from "rxjs/index";
-import { KresstRequestResult, SimpleRequestHandler } from "../../../../domain/index";
+import { from, isObservable, of } from "rxjs";
+import { KresstRequestResult, SimpleRequestHandler } from "../../../../domain/http";
 import { handleRequestHandlerResult } from "./handleRequestHandlerResult";
 import { matchAndApplyRequestArgsToHandler } from "./matchAndApplyRequestArgsToHandler";
 

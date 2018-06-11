@@ -1,11 +1,11 @@
 import { isRegExp, isString } from "lodash";
-import { KresstRequestHandler } from "../../../../domain/index";
-import { dedupeSlashes } from "../../../../utils/index";
+import { KresstRequestHandler } from "../../../../domain/http";
+import { dedupeSlashes } from "../../../../utils";
 import { getRouteHandler } from "./getRouteHandler";
 import { getServerMethod } from "./getServerMethod";
 import { IRouteData } from "../../../../domain/decorators/IRouteData";
 
-export const registerRoute = ({ server, instance, metadata, middleware, methodMetadata }: IRouteData): string => {
+export const registerRoute = ({ server, instance, metadata, methodMetadata }: IRouteData): string => {
     const serverMethod: Function = getServerMethod(server, methodMetadata);
     const handler: KresstRequestHandler = getRouteHandler(instance, methodMetadata.key);
 
@@ -20,7 +20,7 @@ export const registerRoute = ({ server, instance, metadata, middleware, methodMe
         }
     }
 
-    serverMethod.call(server, routeOptions, [...middleware.toArray(), ...methodMetadata.middleware.toArray()], handler);
+    serverMethod.call(server, routeOptions, [...metadata.middleware.toArray(), ...methodMetadata.middleware.toArray()], handler);
 
     return routeOptions.path;
 };

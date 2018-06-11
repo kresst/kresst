@@ -1,4 +1,4 @@
-import { Newable, NewableLike } from "../domain/Newable";
+import { Newable, NewableLike } from "../domain";
 
 /*
 * Instance Creation
@@ -6,4 +6,6 @@ import { Newable, NewableLike } from "../domain/Newable";
 * Creates a new instance of supplied constructor with
 * given properly ordered resolved parameters.
 * */
-export const createInstance = <T extends Newable>(constructor: T, injections: Array<NewableLike>): any => new constructor(...injections);
+export const createInstance = <T extends Newable>(constructor: T, injections: Array<NewableLike> = []): any => {
+    return new constructor(...injections);
+};

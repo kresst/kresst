@@ -1,6 +1,6 @@
 import { List } from "immutable";
 import { isNil } from "lodash";
-import { SimpleRequestHandler } from "../../../../domain/index";
+import { SimpleRequestHandler } from "../../../../domain/http";
 
 const STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/gm;
 const ARGUMENT_NAMES = /([^\s,]+)/g;

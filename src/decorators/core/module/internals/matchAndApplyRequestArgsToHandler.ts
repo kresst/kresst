@@ -1,6 +1,6 @@
 import { List } from "immutable";
 import { Request } from "restify";
-import { KresstRequestResult, SimpleRequestHandler } from "../../../../domain/index";
+import { KresstRequestResult, SimpleRequestHandler } from "../../../../domain/http";
 import { castHandlerValuesToTypes } from "./castHandlerValuesToTypes";
 import { extractHandlerParamNames } from "./extractHandlerParamNames";
 import { mapHandlerParamsToValues } from "./mapHandlerParamsToValues";

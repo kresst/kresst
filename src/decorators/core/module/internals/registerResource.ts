@@ -1,6 +1,6 @@
 import { isNil, padStart } from "lodash";
 import { Server } from "restify";
-import { resolveConstructor } from "../../../../di/index";
+import { resolveConstructor } from "../../../../di";
 import {
     METADATA_KEYS,
     ModuleConfig,
@@ -31,7 +31,6 @@ export const registerResource = (resource: any, moduleConfig: ModuleConfig, serv
             server,
             instance,
             metadata,
-            middleware: metadata.middleware,
             methodMetadata
         });
 

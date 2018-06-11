@@ -1,9 +1,9 @@
 import { List } from "immutable";
-import { RequestHandler } from "restify";
+import { KresstRequestHandler } from "../http";
 
 export interface ResourceMetadata<T> {
     path?: string;
-    middleware: List<RequestHandler>;
+    middleware: List<KresstRequestHandler>;
     constructor: T;
 }
 
