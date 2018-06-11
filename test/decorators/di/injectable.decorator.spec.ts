@@ -4,7 +4,7 @@ import "reflect-metadata";
 import { ERROR_MESSAGES, Injectable, METADATA_KEYS } from "../../../src/index";
 import { decorate } from "../../utils/test/decorate";
 
-@suite("Unit Test: @Injectable")
+@suite("[DECORATOR] @Injectable")
 class InjectableDecoratorSpec {
     @test
     "should generate metadata if declared injections"(): void {

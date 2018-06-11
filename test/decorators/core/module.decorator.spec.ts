@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import * as restify from "restify";
 import { ERROR_MESSAGES, Method, Module, Resource } from "../../../src/index";
 
-@suite("Unit Test: @Module")
+@suite("[DECORATOR] @Module")
 class ModuleDecoratorSpec {
     @test
     "should generate routes for resource methods"(): void {

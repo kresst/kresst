@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import { sanitizePath } from "../../src/utils";
 
-@suite("Unit Test: [UTILS] sanitizePath")
+@suite("[UNIT] [UTILS] sanitizePath")
 class SanitizePathSpec {
     @test
     "should supply a sanitized path for a null input"(): void {

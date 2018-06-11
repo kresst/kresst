@@ -63,7 +63,7 @@ class GuessParamClass {
     }
 }
 
-@suite("Unit Test: @Inject as Parameters")
+@suite("[DECORATOR] @Inject as Parameters")
 class InjectParametersDecoratorSpec {
     @test
     "should generate metadata for named-type parameters"(): void {

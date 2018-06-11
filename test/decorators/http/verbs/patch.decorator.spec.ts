@@ -10,7 +10,7 @@ import {
     ResourceMethodMetadataList
 } from "../../../../src/index";
 
-@suite("Unit Test: @PATCH")
+@suite("[DECORATOR] @PATCH")
 class PatchDecoratorSpec {
     @test
     "should add PATCH metadata to a class when decorated with @PATCH"(): void {

@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { METADATA_KEYS, OPTIONS, Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
 
-@suite("Unit Test: @OPTIONS")
+@suite("[DECORATOR] @OPTIONS")
 class OptionsDecoratorSpec {
     @test
     "should add OPTIONS metadata to a class when decorated with @OPTIONS"(): void {

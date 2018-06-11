@@ -50,7 +50,7 @@ class GuessPropClass {
     }
 }
 
-@suite("Unit Test: @Inject as Properties")
+@suite("[DECORATOR] @Inject as Properties")
 class InjectDecoratorSpecProperties {
     @test
     "should generate metadata for named-type properties"(): void {

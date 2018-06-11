@@ -5,7 +5,7 @@ import { Resource } from "../../../src/decorators/core/index";
 import { METADATA_KEYS } from "../../../src/domain/constants/index";
 import { ResourceMetadata } from "../../../src/domain/decorators/index";
 
-@suite("Unit Test: @Resource")
+@suite("[DECORATOR] @Resource")
 class ResourceDecoratorSpec {
     @test
     "should add Resource metadata to a class when decorated with @Resource"(): void {

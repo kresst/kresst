@@ -49,7 +49,7 @@ class MissingInjectableParamClass {
     }
 }
 
-@suite("Unit Test: Resolver")
+@suite("[UNIT] Resolver")
 class InjectParametersDecoratorSpec {
     @test
     "should inject proper data for @Inject()-less-type parameters"(): void {

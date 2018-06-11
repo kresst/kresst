@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { DELETE, METADATA_KEYS, Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
 
-@suite("Unit Test: @DELETE")
+@suite("[DECORATOR] @DELETE")
 class DeleteDecoratorSpec {
     @test
     "should add DELETE metadata to a class when decorated with @DELETE"(): void {

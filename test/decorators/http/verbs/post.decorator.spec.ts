@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { METADATA_KEYS, POST, Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
 
-@suite("Unit Test: @POST")
+@suite("[DECORATOR] @POST")
 class PostDecoratorSpec {
     @test
     "should add POST metadata to a class when decorated with @POST"(): void {

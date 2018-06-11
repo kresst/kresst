@@ -45,7 +45,7 @@ class InlineGuessParamClass {
     }
 }
 
-@suite("Unit Test: @Inject as Inline Parameters")
+@suite("[DECORATOR] @Inject as Inline Parameters")
 class InjectInlineParametersDecoratorSpec {
     @test
     "should generate metadata for inline named-type parameters"(): void {

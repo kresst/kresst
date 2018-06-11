@@ -6,7 +6,7 @@ import { BusinessRuleMode } from "../../../src/domain/rules";
 import { StringFormatRule } from "../../../src/rules/format";
 import { FakeClassMock } from "../../utils/mocks/domain/FakeClass.mock";
 
-describe("Unit Test: StringFormatBusinessRule", () => {
+describe("[UNIT] StringFormatBusinessRule", () => {
     const rule: StringFormatRule<FakeClassMock> = new StringFormatRule<FakeClassMock>(BusinessRuleMode.ANY, "property", "[a-zA-Z0-9]{5}");
 
     @suite(`Common operations`)

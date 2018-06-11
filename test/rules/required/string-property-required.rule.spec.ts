@@ -6,7 +6,7 @@ import { BusinessRuleMode } from "../../../src/domain/rules";
 import { StringPropertyRequiredRule } from "../../../src/rules/required";
 import { FakeClassMock } from "../../utils/mocks/domain/FakeClass.mock";
 
-describe("Unit Test: StringPropertyRequiredBusinessRule", () => {
+describe("[UNIT] StringPropertyRequiredBusinessRule", () => {
     const rule: StringPropertyRequiredRule<FakeClassMock> = new StringPropertyRequiredRule<FakeClassMock>(BusinessRuleMode.ANY, "property");
 
     @suite(`Common operations`)

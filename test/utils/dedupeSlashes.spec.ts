@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import { dedupeSlashes } from "../../src/utils";
 
-@suite("Unit Test: [UTILS] dedupeSlashes")
+@suite("[UNIT] [UTILS] dedupeSlashes")
 class DedupeSlashesSpec {
     @test
     "should dedupe slashes of string input"(): void {

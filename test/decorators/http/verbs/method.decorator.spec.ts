@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { METADATA_KEYS, Method, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
 
-@suite("Unit Test: @Method")
+@suite("[DECORATOR] @Method")
 class MethodDecoratorSpec {
     @test
     "should add Method metadata to a class when decorated with @Method"(): void {

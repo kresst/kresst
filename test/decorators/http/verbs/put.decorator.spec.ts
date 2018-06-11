@@ -3,7 +3,7 @@ import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
 import { METADATA_KEYS, PUT, Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
 
-@suite("Unit Test: @PUT")
+@suite("[DECORATOR] @PUT")
 class PutDecoratorSpec {
     @test
     "should add PUT metadata to a class when decorated with @PUT"(): void {

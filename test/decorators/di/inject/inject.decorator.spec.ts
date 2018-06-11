@@ -40,7 +40,7 @@ class InvalidDecoratorUsageClass {
     }
 }
 
-@suite("Unit Test: @Inject")
+@suite("[DECORATOR] @Inject")
 class InjectDecoratorSpec {
     @test
     "should throw when applied multiple times"(): void {

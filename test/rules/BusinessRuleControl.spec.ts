@@ -7,7 +7,7 @@ import { FakeClassMock } from "../utils/mocks/domain/FakeClass.mock";
 import { EmptyServiceMock } from "../utils/mocks/services/EmptyService.mock";
 import { FakeServiceMock } from "../utils/mocks/services/FakeService.mock";
 
-@suite("Unit Test: BusinessRuleControlSpec")
+@suite("[UNIT] BusinessRuleControlSpec")
 class BusinessRuleControlSpec {
     @test
     "should initialize with no business rules if not defined"(): void {
