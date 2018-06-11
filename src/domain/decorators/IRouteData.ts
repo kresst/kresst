@@ -1,6 +1,5 @@
-import { List } from "immutable";
 import { Server } from "restify";
-import { KresstRequestHandler, ResourceMetadata, ResourceMethodMetadata } from "../index";
+import { ResourceMetadata, ResourceMethodMetadata } from "../index";
 
 export interface IRouteData {
     server: Server;

@@ -15,11 +15,10 @@ addons:
 before_script:
   - node -v
   - yarn
-#  - yarn build:prod
 
 script:
-  - yarn test
   - yarn lint
+  - yarn test
   - yarn build:prod
 
 after_success:
