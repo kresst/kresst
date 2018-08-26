@@ -1,6 +1,7 @@
 import { Next, Request, Response } from "restify";
 import Optional from "typescript-optional";
-import { GET, Param, ParamLocation, POST, Raw, Resource } from "../../src";
+import { Resource } from "../../src/core";
+import { GET, Param, ParamLocation, POST, Raw } from "../../src/http";
 import { DumbService } from "../services/dumb.service";
 
 @Resource("dumb")

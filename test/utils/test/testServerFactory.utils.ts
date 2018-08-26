@@ -1,7 +1,7 @@
 import { isFunction, merge } from "lodash";
 import * as restify from "restify";
 import { Server, ServerOptions } from "restify";
-import { Module } from "../../../src/index";
+import { Module } from "../../../src/core";
 
 export const testServerFactory = (
     resource: any,

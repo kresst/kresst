@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import Optional from "typescript-optional";
-import { KresstError } from "../../../src/domain/errors";
-import { BusinessRuleMode } from "../../../src/domain/rules";
+import { KresstError } from "../../../src/core/domain";
+import { BusinessRuleMode } from "../../../src/rules/domain";
 import { ObjectPropertyRequiredRule } from "../../../src/rules/required";
 import { FakeClassMock } from "../../utils/mocks/domain/FakeClass.mock";
 

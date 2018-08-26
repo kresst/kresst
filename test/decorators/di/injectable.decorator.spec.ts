@@ -1,7 +1,8 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import "reflect-metadata";
-import { ERROR_MESSAGES, Injectable, METADATA_KEYS } from "../../../src/index";
+import { ERROR_MESSAGES, METADATA_KEYS } from "../../../src/constants";
+import { Injectable } from "../../../src/di";
 import { decorate } from "../../utils/test/decorate";
 
 @suite("[DECORATOR] @Injectable")

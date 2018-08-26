@@ -3,13 +3,20 @@
     "description": "Lightweight opinionated Node.js REST supercharge",
     "version": "1.0.0",
     "scripts": {
-        "integration": "ts-node integration",
+        "integration": "ts-node -r tsconfig-paths/register integration",
         "build": "rimraf dist && tsc -p tsconfig.json --outDir dist",
         "build:prod": "rimraf dist && tsc -p tsconfig.json --outDir dist --noUnusedLocals --noUnusedParameters",
         "lint": "tslint -t stylish -c tslint.json -p tsconfig.json 'src/**/*.ts'",
         "test": "nyc mocha && rimraf .nyc_output",
         "precommit": "lint-staged && yarn lint && yarn test",
-        "postcommit": "git add ."
+        "postcommit": "git add .",
+        "barrels": "yarn barrel-di && yarn barrel-core && yarn barrel-http && yarn barrel-utils && yarn barrel-rules && yarn barrel-constants",
+        "barrel-di": "barrelsby --delete --directory ./src/di --exclude .d.ts --exclude internals",
+        "barrel-core": "barrelsby --delete --directory ./src/core --exclude .d.ts --exclude internals",
+        "barrel-http": "barrelsby --delete --directory ./src/http --exclude .d.ts --exclude internals",
+        "barrel-utils": "barrelsby --delete --directory ./src/utils --exclude .d.ts --exclude internals",
+        "barrel-rules": "barrelsby --delete --directory ./src/rules --exclude .d.ts --exclude internals",
+        "barrel-constants": "barrelsby --delete --directory ./src/constants --exclude .d.ts --exclude internals"
     },
     "nyc": {
         "check-coverage": true,
@@ -72,6 +79,7 @@
         "@types/supertest": "2.0.4",
         "@types/uuid": "3.4.3",
         "@types/verror": "1.10.3",
+        "barrelsby": "1.0.2",
         "chai": "4.1.2",
         "coveralls": "3.0.1",
         "husky": "0.14.3",
@@ -89,6 +97,7 @@
         "source-map-support": "0.5.6",
         "supertest": "3.1.0",
         "ts-node": "6.0.5",
+        "tsconfig-paths": "3.4.2",
         "tslint": "5.10.0",
         "tslint-clean-code": "0.2.7",
         "tslint-consistent-codestyle": "1.13.0",

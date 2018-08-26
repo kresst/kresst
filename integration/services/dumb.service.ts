@@ -1,4 +1,4 @@
-import { Injectable } from "../../src";
+import { Injectable } from "../../src/di";
 
 @Injectable()
 export class DumbService {

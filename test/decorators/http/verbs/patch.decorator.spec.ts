@@ -1,14 +1,9 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
-import {
-    METADATA_KEYS,
-    PATCH,
-    Resource,
-    ResourceMethodMetadata,
-    ResourceMethodMetadataArray,
-    ResourceMethodMetadataList
-} from "../../../../src/index";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/core";
+import { PATCH } from "../../../../src/http";
 
 @suite("[DECORATOR] @PATCH")
 class PatchDecoratorSpec {

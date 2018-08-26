@@ -1,6 +1,5 @@
 import { List } from "immutable";
-import { BusinessRuleControl, BusinessRuleMode, IBusinessRule } from "../../../../src/domain/rules";
-import { StringPropertyRequiredRule } from "../../../../src/rules/required";
+import { BusinessRuleControl, BusinessRuleMode, IBusinessRule, StringPropertyRequiredRule } from "../../../../src/rules";
 import { FakeClassMock } from "../domain/FakeClass.mock";
 
 export class FakeServiceMock extends BusinessRuleControl<FakeClassMock> {

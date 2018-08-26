@@ -1,7 +1,8 @@
 import { expect } from "chai";
 import { List } from "immutable";
 import { suite, test } from "mocha-typescript";
-import { METADATA_KEYS, Param, ParamLocation } from "../../../../src/index";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { Param, ParamLocation } from "../../../../src/http";
 
 @suite("[DECORATOR] @Param")
 class ParamDecoratorSpec {

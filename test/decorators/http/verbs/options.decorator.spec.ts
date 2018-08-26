@@ -1,7 +1,9 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
-import { METADATA_KEYS, OPTIONS, Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/core";
+import { OPTIONS } from "../../../../src/http";
 
 @suite("[DECORATOR] @OPTIONS")
 class OptionsDecoratorSpec {

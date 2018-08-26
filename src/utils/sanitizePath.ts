@@ -1,5 +1,5 @@
+import { dedupeSlashes } from "@kresst/utils";
 import { camelCase, isString } from "lodash";
-import { dedupeSlashes } from "./index";
 
 export const sanitizePath = (path: string = "", defaultPath?: string): string => {
     let _path = "";

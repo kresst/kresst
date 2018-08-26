@@ -1,8 +1,9 @@
 import { expect } from "chai";
 import { Map, List } from "immutable";
 import { suite, test } from "mocha-typescript";
-import { MetadataList } from "../../../../src/domain/metadata";
-import { IMetadata, Inject, METADATA_KEYS } from "../../../../src/index";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { IMetadata, MetadataList } from "../../../../src/core";
+import { Inject } from "../../../../src/di";
 
 interface Primary {}
 

@@ -1,7 +1,9 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
-import { DELETE, METADATA_KEYS, Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/core";
+import { DELETE } from "../../../../src/http";
 
 @suite("[DECORATOR] @DELETE")
 class DeleteDecoratorSpec {

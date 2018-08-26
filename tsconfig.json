@@ -19,7 +19,15 @@
         "noResolve": false,
         "noUnusedParameters": false,
         "noUnusedLocals": false,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "paths": {
+            "@kresst/di": ["di"],
+            "@kresst/core": ["core"],
+            "@kresst/http": ["http"],
+            "@kresst/utils": ["utils"],
+            "@kresst/rules": ["rules"],
+            "@kresst/constants": ["constants"]
+        }
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules", "test/**/*.spec.ts"]

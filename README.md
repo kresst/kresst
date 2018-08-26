@@ -8,16 +8,17 @@
 
 <p align="center">
 
-[![npm version](https://badge.fury.io/js/kresst.svg)](https://badge.fury.io/js/kresst)
-[![Build Status](https://travis-ci.org/kresst/kresst.svg?branch=dev)](https://travis-ci.org/kresst/kresst)
-[![GitHub issues](https://img.shields.io/github/issues/kresst/kresst.svg)](https://github.com/kresst/kresst/issues)
-[![Dependencies](https://david-dm.org/kresst/kresst.svg)](https://david-dm.org/kresst/kresst#info=dependencies)
-[![Dev Dependencies](https://david-dm.org/kresst/kresst/dev-status.svg)](https://david-dm.org/kresst/kresst#info=devDependencies)
-[![Peer Dependencies](https://david-dm.org/kresst/kresst/peer-status.svg)](https://david-dm.org/kresst/kresst#info=peerDependenciess)
-[![Coverage Status](https://coveralls.io/repos/github/kresst/kresst/badge.svg?branch=dev)](https://coveralls.io/github/kresst/kresst?branch=dev)
-[![Known Vulnerabilities](https://snyk.io/test/github/kresst/kresst/badge.svg)](https://snyk.io/test/github/kresst/kresst)
-[![npm downloads](https://img.shields.io/npm/dm/kresst.svg)](https://npmjs.org/kresst)
-[![GitHub license](https://img.shields.io/github/license/kresst/kresst.svg)](https://github.com/kresst/kresst/blob/master/LICENSE)
+[![npm version][npm-image]][npm-url]
+[![Build Status][build-image]][build-url]
+[![GitHub issues][github-issues-image]][github-issues-url]
+[![Dependencies][dependencies-image]][dependencies-url]
+[![Dev Dependencies][dev-image]][dev-url]
+[![Peer Dependencies][peer-image]][peer-url]
+[![Coverage Status][coverage-image]][coverage-url]
+[![Known Vulnerabilities][known-image]][known-url]
+[![npm downloads][npm-image]][npm-url]
+[![GitHub license][github-license-image]][github-license-url]
+[![code style: prettier][prettier-image]][prettier-url]
 
 </p>
 
@@ -62,3 +63,26 @@ kresst is available under the [MIT license](http://opensource.org/licenses/MIT).
 ## Logo
 
 kresst logo is borrowed from Ivan Bobrov ([Dribbble](https://dribbble.com/bigoodis) | [Website](http://www.ivanbobrov.com/)), thank you! ❤
+
+[npm-image]: https://badge.fury.io/js/kresst.svg
+[npm-url]: https://badge.fury.io/js/kresst
+[build-image]: https://travis-ci.org/kresst/kresst.svg?branch=dev
+[build-url]: https://travis-ci.org/kresst/kresst
+[github-issues-image]: https://img.shields.io/github/issues/kresst/kresst.svg
+[github-issues-url]: https://github.com/kresst/kresst/issues
+[dependencies-image]: https://david-dm.org/kresst/kresst.svg
+[dependencies-url]: https://david-dm.org/kresst/kresst#info=dependencies
+[dev-image]: https://david-dm.org/kresst/kresst/dev-status.svg
+[dev-url]: https://david-dm.org/kresst/kresst#info=devDependencies
+[peer-image]: https://david-dm.org/kresst/kresst/peer-status.svg
+[peer-url]: https://david-dm.org/kresst/kresst#info=peerDependenciess
+[coverage-image]: https://coveralls.io/repos/github/kresst/kresst/badge.svg?branch=dev
+[coverage-url]: https://coveralls.io/github/kresst/kresst?branch=dev
+[known-image]: https://snyk.io/test/github/kresst/kresst/badge.svg
+[known-url]: https://snyk.io/test/github/kresst/kresst
+[npm-image]: https://img.shields.io/npm/dm/kresst.svg
+[npm-url]: https://npmjs.org/kresst
+[github-license-image]: https://img.shields.io/github/license/kresst/kresst.svg
+[github-license-url]: https://github.com/kresst/kresst/blob/master/LICENSE
+[prettier-image]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
+[prettier-url]: https://github.com/prettier/prettier

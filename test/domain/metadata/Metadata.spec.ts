@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
-import { METADATA_KEYS } from "../../../src/domain/constants/index";
-import { Metadata } from "../../../src/domain/metadata/index";
+import { METADATA_KEYS } from "../../../src/constants/index";
+import { Metadata } from "../../../src/core/domain/metadata/index";
 
 @suite("[UNIT] BusinessRuleControlSpec")
 class MetadataSpec {

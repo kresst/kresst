@@ -1,7 +1,9 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import * as restify from "restify";
-import { ERROR_MESSAGES, Method, Module, Resource } from "../../../src/index";
+import { ERROR_MESSAGES } from "../../../src/constants";
+import { Module, Resource } from "../../../src/core";
+import { Method } from "../../../src/http";
 
 @suite("[DECORATOR] @Module")
 class ModuleDecoratorSpec {

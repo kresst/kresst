@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
-import { METADATA_KEYS, Raw } from "../../../../src/index";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { Raw } from "../../../../src/http";
 
 @suite("[DECORATOR] @Raw")
 class RawDecoratorSpec {

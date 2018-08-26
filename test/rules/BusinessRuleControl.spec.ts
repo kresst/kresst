@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { List } from "immutable";
 import { suite, test } from "mocha-typescript";
-import { IBusinessRule } from "../../src/domain/rules";
+import { IBusinessRule } from "../../src/rules/domain";
 import { StringPropertyRequiredRule } from "../../src/rules/required";
 import { FakeClassMock } from "../utils/mocks/domain/FakeClass.mock";
 import { EmptyServiceMock } from "../utils/mocks/services/EmptyService.mock";

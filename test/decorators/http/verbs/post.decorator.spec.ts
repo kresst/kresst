@@ -1,7 +1,9 @@
 import { expect } from "chai";
 import { suite, test } from "mocha-typescript";
 import { Next, Request, Response } from "restify";
-import { METADATA_KEYS, POST, Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/index";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { Resource, ResourceMethodMetadata, ResourceMethodMetadataList } from "../../../../src/core";
+import { POST } from "../../../../src/http";
 
 @suite("[DECORATOR] @POST")
 class PostDecoratorSpec {

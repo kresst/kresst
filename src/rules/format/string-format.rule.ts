@@ -1,9 +1,8 @@
+import { KresstError } from "@kresst/core";
+import { HttpStatus } from "@kresst/http";
+import { BusinessRule, BusinessRuleMode } from "@kresst/rules";
 import { isNil } from "lodash";
 import Optional from "typescript-optional";
-import { KresstError } from "../../domain/errors/KresstError";
-import { HttpStatus } from "../../domain/http/HttpStatus";
-import { BusinessRule } from "../../domain/rules/BusinessRule";
-import { BusinessRuleMode } from "../../domain/rules/BusinessRuleMode";
 
 export class StringFormatRule<T> extends BusinessRule<T> {
     private readonly pattern: RegExp;

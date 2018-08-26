@@ -1,5 +1,5 @@
 import { List } from "immutable";
-import { BusinessRuleControl, IBusinessRule } from "../../../../src/domain/rules";
+import { BusinessRuleControl, IBusinessRule } from "../../../../src/rules";
 
 export class EmptyServiceMock extends BusinessRuleControl<any> {
     constructor() {

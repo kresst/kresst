@@ -2,8 +2,9 @@ import { expect } from "chai";
 import { List } from "immutable";
 import { suite, test } from "mocha-typescript";
 import Optional from "typescript-optional";
-import { createInstance, METADATA_KEYS } from "../../../../src";
-import { castHandlerValuesToTypes } from "../../../../src/decorators/core/module/internals/castHandlerValuesToTypes";
+import { METADATA_KEYS } from "../../../../src/constants";
+import { castHandlerValuesToTypes } from "../../../../src/core/internals/module/castHandlerValuesToTypes";
+import { createInstance } from "../../../../src/di/internals/createInstance";
 
 @suite("[CORE] castHandlerValuesToTypes")
 class CastHandlerValuesToTypesSpec {

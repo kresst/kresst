@@ -1,4 +1,5 @@
 --recursive
 --full-trace
+-r tsconfig-paths/register
 test/**/*.spec.ts
 src/**/*.ts

@@ -1,6 +1,6 @@
 import { isUndefined, noop } from "lodash";
 import * as restify from "restify";
-import { Module } from "../src";
+import { Module } from "../src/core";
 import { DumbResource } from "./resources/dumbResource";
 import { DumbService } from "./services/dumb.service";
 
