@@ -24,6 +24,11 @@
 
 > Lightweight opinionated Node.js REST supercharge
 
+# Important note
+
+This project is stopped in favor of [NestJS](https://github.com/nestjs/nest), which share the same goals and mottos.
+I will keep the repository available though.
+
 ## Why kresst?
 
 Inspired by already famous and insanely used frameworks like [Angular](https://angular.io), [InversifyJS](http://inversify.io) or [restx](http://restx.io), kresst aims at providing the best of all of them in a NodeJS REST environment.
