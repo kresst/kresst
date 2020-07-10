@@ -61,7 +61,7 @@
     },
     "homepage": "https://kresst.raphaelmarques.fr/docs",
     "dependencies": {
-        "lodash": "4.17.10",
+        "lodash": "4.17.16",
         "reflect-metadata": "0.1.12",
         "rxjs": "6.2.0",
         "typescript-optional": "1.5.0",
